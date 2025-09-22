@@ -1,0 +1,18 @@
+2025-09-21 16:22:21,609 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-21 16:22:21,609 - database - WARNING - DATABASE_URL not set, using mock data only - BankWise AI Banking Support API
+2025-09-21 16:22:21,609 - __main__ - WARNING - Database initialization failed, using mock data only
+2025-09-21 16:22:21,609 - __main__ - INFO - Initialized mock data with 100 accounts, 191 cards, 12703 transactions
+2025-09-22 00:39:33,744 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-22 00:39:33,745 - database - WARNING - DATABASE_URL not set, using mock data only - BankWise AI Banking Support API
+2025-09-22 00:39:33,745 - __main__ - WARNING - Database initialization failed, using mock data only
+2025-09-22 00:39:33,745 - __main__ - INFO - Initialized mock data with 100 accounts, 182 cards, 13374 transactions
+2025-09-22 00:39:59,676 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-22 00:40:01,846 - database - INFO - Creating database tables...
+2025-09-22 00:40:03,559 - database - INFO - BankWise AI Banking Support API - All tables created successfully
+2025-09-22 00:40:03,662 - database - INFO - BankWise AI Banking Support API - Populating database with initial data...
+2025-09-22 00:40:04,070 - database - ERROR - Database initialization failed: invalid input for query argument $11: '2024-10-21T00:40:03.569049' (expected a datetime.date or datetime.datetime instance, got 'str')
+2025-09-22 00:40:04,070 - __main__ - WARNING - Database initialization failed, using mock data only
+2025-09-22 00:40:04,071 - __main__ - INFO - Initialized mock data with 100 accounts, 182 cards, 13374 transactions
+2025-09-22 00:51:14,589 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-22 00:51:17,488 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-22 00:51:17,612 - __main__ - INFO - Database initialized successfully

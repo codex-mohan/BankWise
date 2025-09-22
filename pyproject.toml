@@ -1,0 +1,18 @@
+[project]
+name = "nasscom"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.12.15",
+    "asyncpg>=0.30.0",
+    "dotenv>=0.9.9",
+    "faker>=37.8.0",
+    "fastapi>=0.117.1",
+    "httpx>=0.28.1",
+    "orjson>=3.11.3",
+    "psycopg2-binary>=2.9.10",
+    "requests>=2.32.5",
+    "uvicorn>=0.36.0",
+]

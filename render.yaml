@@ -1,0 +1,20 @@
+# Render deployment configuration for BankWise AI Banking Support API
+services:
+  - type: web
+    name: bankwise-ai-banking-api
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"
+      - key: PORT
+        value: "10000"
+      - key: ENVIRONMENT
+        value: "production"
+      - key: LOG_LEVEL
+        value: "INFO"
+      - key: DATABASE_URL
+        value: "postgresql://neondb_owner:npg_Jt9vdTRbaQ7N@ep-blue-poetry-a1c1dckb-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    region: "oregon"
+    autoDeploy: true
