@@ -441,6 +441,7 @@ For issues and questions, please refer to the project documentation or create an
 The API uses Pydantic models to define clear data schemas for all requests and responses. Below are some key examples:
 
 #### Account Balance Request
+
 ```json
 {
   "account_number": "123456789012"
@@ -448,6 +449,7 @@ The API uses Pydantic models to define clear data schemas for all requests and r
 ```
 
 #### Account Balance Response
+
 ```json
 {
   "account_number": "******9012",
@@ -459,6 +461,7 @@ The API uses Pydantic models to define clear data schemas for all requests and r
 ```
 
 #### Branch Locator Request
+
 ```json
 {
   "branch_city": "Mumbai",
@@ -467,6 +470,7 @@ The API uses Pydantic models to define clear data schemas for all requests and r
 ```
 
 #### Branch Record
+
 ```json
 {
   "name": "BOB Mumbai Main",
