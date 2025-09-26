@@ -16,3 +16,13 @@
 2025-09-22 00:51:14,589 - __main__ - INFO - Starting BankWise AI Banking Support API
 2025-09-22 00:51:17,488 - database - INFO - BankWise AI Banking Support API - Database tables already exist
 2025-09-22 00:51:17,612 - __main__ - INFO - Database initialized successfully
+2025-09-24 17:26:54,753 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-24 17:26:56,888 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-24 17:26:56,953 - __main__ - INFO - Database initialized successfully
+2025-09-24 17:27:57,183 - __main__ - INFO - Account balance request for account: 486754711183
+2025-09-24 17:27:57,381 - __main__ - INFO - Balance retrieved from mock data for account: 486754711183
+2025-09-24 17:32:42,402 - __main__ - INFO - KYC status request for account: 486754711183
+2025-09-24 17:32:42,533 - __main__ - INFO - KYC status retrieved from mock data for account: 486754711183
+2025-09-26 15:06:59,533 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-26 15:07:03,101 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-26 15:07:03,299 - __main__ - INFO - Database initialized successfully
