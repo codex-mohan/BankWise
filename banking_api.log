@@ -34,3 +34,15 @@
 2025-09-26 19:01:57,556 - __main__ - INFO - Database initialized successfully
 2025-09-26 21:02:08,624 - routes.account - INFO - Account balance request for account: 619297175888
 2025-09-26 21:02:10,906 - routes.account - INFO - Balance retrieved from mock data for account: 619297175888
+2025-09-26 21:17:04,774 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-26 21:17:08,152 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-26 21:17:08,356 - __main__ - INFO - Database initialized successfully
+2025-09-26 21:17:45,134 - routes.account - INFO - Transaction history request for account: 619297175888, limit: 5
+2025-09-26 21:17:45,938 - routes.account - INFO - Transaction history retrieved from mock data for account: 619297175888
+2025-09-26 21:29:52,501 - routes.card - INFO - Card block request for card ending with: 5888
+2025-09-26 21:29:54,425 - routes.card - WARNING - Card not found ending with: 5888
+2025-09-26 21:30:44,338 - routes.card - INFO - Card block request for card ending with: 1567
+2025-09-26 21:30:44,807 - routes.card - INFO - Card blocked in mock data for card ending with: 1567
+2025-09-26 23:40:29,585 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-26 23:40:32,242 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-26 23:40:32,372 - __main__ - INFO - Database initialized successfully

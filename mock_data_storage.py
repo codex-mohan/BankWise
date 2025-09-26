@@ -26,6 +26,7 @@ class MockDataStorage:
             "disputes": "disputes.json",
             "loans": "loans.json",
             "fd_rates": "fd_rates.json",
+            "cheques": "cheques.json",
         }
         self.ensure_data_directory()
         self.load_or_create_data()
@@ -60,6 +61,7 @@ class MockDataStorage:
             self.fd_rates = (
                 self._load_json_file("fd_rates") or self._generate_fd_rates()
             )
+            self.cheques = self._load_json_file("cheques") or self._generate_cheques()
 
             # Save all data to ensure we have files
             self.save_all_data()
@@ -78,6 +80,7 @@ class MockDataStorage:
             self.disputes = self._generate_disputes()
             self.loans = self._generate_loans()
             self.fd_rates = self._generate_fd_rates()
+            self.cheques = self._generate_cheques()
             self.save_all_data()
 
     def _load_json_file(self, data_type: str) -> Optional[List[Dict]]:
@@ -117,6 +120,7 @@ class MockDataStorage:
         self._save_json_file("disputes", self.disputes)
         self._save_json_file("loans", self.loans)
         self._save_json_file("fd_rates", self.fd_rates)
+        self._save_json_file("cheques", self.cheques)
 
     def _generate_accounts(self) -> List[Dict]:
         """Generate mock account data"""
@@ -536,6 +540,32 @@ class MockDataStorage:
 
         return fd_rates
 
+    def _generate_cheques(self) -> List[Dict]:
+        """Generate mock cheque data"""
+        cheques = []
+        statuses = ["Cleared", "Pending", "Bounced", "Under Process"]
+
+        for account in self.accounts:
+            for _ in range(random.randint(1, 5)):
+                status = random.choice(statuses)
+                issue_date = datetime.now() - timedelta(days=random.randint(1, 365))
+                clearing_date = None
+                if status == "Cleared":
+                    clearing_date = issue_date + timedelta(days=random.randint(1, 5))
+
+                cheque = {
+                    "cheque_number": f"{random.randint(100000, 999999)}",
+                    "account_number": account["account_number"],
+                    "amount": round(random.uniform(1000, 50000), 2),
+                    "status": status,
+                    "issue_date": issue_date.isoformat(),
+                    "clearing_date": clearing_date.isoformat() if clearing_date else None,
+                    "payee_name": fake.name(),
+                }
+                cheques.append(cheque)
+
+        return cheques
+
     def get_account_by_number(self, account_number: str) -> Optional[Dict]:
         """Get account by account number"""
         for account in self.accounts:
@@ -597,6 +627,13 @@ class MockDataStorage:
         if tenure:
             return [r for r in self.fd_rates if r["tenure"] == tenure]
         return self.fd_rates
+
+    def get_cheque_by_number(self, cheque_number: str) -> Optional[Dict]:
+        """Get cheque by cheque number"""
+        for cheque in self.cheques:
+            if cheque["cheque_number"] == cheque_number:
+                return cheque
+        return None
 
     def add_complaint(self, complaint_data: Dict) -> Dict:
         """Add a new complaint"""

@@ -40,10 +40,12 @@ This action allows a customer to raise a dispute for a specific transaction.
 `POST /api/dispute/raise`
 
 ```json
-{"transaction_id": "{{transaction_id}}", "reason": "{{reason}}"}
+{"amount": "{{amount}}", "transaction_date": "{{transaction_date}}", "reason": "{{reason}}", "description": "{{description}}"}
 ```
-- `transaction_id`: The ID of the transaction to dispute.
+- `amount`: The amount of the transaction to dispute.
+- `transaction_date`: The date of the transaction in "YYYY-MM-DD" format.
 - `reason`: The reason for the dispute.
+- `description`: A detailed description of the dispute.
 
 ## Create a New Complaint
 This action allows a customer to create a new complaint.

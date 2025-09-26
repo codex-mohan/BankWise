@@ -5,6 +5,8 @@ import logging
 import random
 
 from models import ChequeStatusRequest, ChequeStatusResponse, Status
+from mock_data_storage import mock_storage
+from database import db_manager
 
 logger = logging.getLogger(__name__)
 
@@ -17,40 +19,51 @@ async def get_cheque_status(request: ChequeStatusRequest):
     try:
         logger.info(f"Cheque status request for cheque number: {request.cheque_number}")
 
-        # Mock cheque status - randomly assign status
-        statuses = ["Cleared", "Pending", "Bounced", "Under Process"]
-        status = random.choice(statuses)
+        # Try to get from database first
+        async with db_manager.get_connection() as conn:
+            if conn:
+                cheque = await conn.fetchrow(
+                    "SELECT * FROM cheques WHERE cheque_number = $1",
+                    request.cheque_number,
+                )
+                if cheque:
+                    response = ChequeStatusResponse(
+                        cheque_number=cheque["cheque_number"],
+                        content=cheque["status"],
+                        amount=cheque["amount"],
+                        date=cheque["issue_date"].isoformat(),
+                        clearing_date=cheque["clearing_date"].isoformat()
+                        if cheque["clearing_date"]
+                        else None,
+                        status=Status.SUCCESS,
+                    )
+                    logger.info(
+                        f"Cheque status retrieved from database for cheque number: {request.cheque_number}"
+                    )
+                    return response
 
-        # Generate mock data based on status
-        if status == "Cleared":
-            amount = round(random.uniform(1000, 50000), 2)
-            date = (datetime.now() - timedelta(days=random.randint(1, 30))).isoformat()
-            clearing_date = (
-                datetime.now() - timedelta(days=random.randint(1, 5))
-            ).isoformat()
-        elif status == "Pending":
-            amount = round(random.uniform(1000, 50000), 2)
-            date = (datetime.now() - timedelta(days=random.randint(1, 10))).isoformat()
-            clearing_date = None
-        else:
-            amount = round(random.uniform(1000, 50000), 2)
-            date = (datetime.now() - timedelta(days=random.randint(1, 30))).isoformat()
-            clearing_date = None
+        # Fallback to mock data
+        cheque = mock_storage.get_cheque_by_number(request.cheque_number)
+        if not cheque:
+            logger.warning(f"Cheque not found: {request.cheque_number}")
+            raise HTTPException(status_code=404, detail="Cheque not found")
 
         response = ChequeStatusResponse(
-            cheque_number=request.cheque_number,
-            content=status,
-            amount=amount,
-            date=date,
-            clearing_date=clearing_date,
+            cheque_number=cheque["cheque_number"],
+            content=cheque["status"],
+            amount=cheque["amount"],
+            date=cheque["issue_date"],
+            clearing_date=cheque["clearing_date"],
             status=Status.SUCCESS,
         )
 
         logger.info(
-            f"Cheque status retrieved successfully for cheque number: {request.cheque_number}"
+            f"Cheque status retrieved from mock data for cheque number: {request.cheque_number}"
         )
         return response
 
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(
             f"Error getting cheque status for cheque number {request.cheque_number}: {str(e)}"
