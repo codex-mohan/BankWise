@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends
-from main import verify_api_token
+from dependencies import verify_api_token
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime

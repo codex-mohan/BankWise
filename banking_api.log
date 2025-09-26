@@ -26,3 +26,6 @@
 2025-09-26 15:06:59,533 - __main__ - INFO - Starting BankWise AI Banking Support API
 2025-09-26 15:07:03,101 - database - INFO - BankWise AI Banking Support API - Database tables already exist
 2025-09-26 15:07:03,299 - __main__ - INFO - Database initialized successfully
+2025-09-26 16:57:23,692 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-26 16:57:25,943 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-26 16:57:26,052 - __main__ - INFO - Database initialized successfully
