@@ -133,6 +133,75 @@ curl -X POST "http://localhost:8000/api/dispute/raise" \
 }
 ```
 
+### Create a New Complaint
+
+```bash
+curl -X POST "http://localhost:8000/api/complaint/new" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "account_number": "123456789012",
+       "subject": "Unauthorized Transaction",
+       "description": "I have noticed an unauthorized transaction on my account.",
+       "category": "TRANSACTION"
+     }'
+```
+
+**Response:**
+
+```json
+{
+  "complaint": {
+    "ticket_id": "COMPLAINT12345",
+    "account_number": "123456789012",
+    "subject": "Unauthorized Transaction",
+    "description": "I have noticed an unauthorized transaction on my account.",
+    "category": "TRANSACTION",
+    "status": "OPEN",
+    "priority": "HIGH",
+    "created_at": "2025-09-28T12:00:00Z",
+    "resolved_at": null,
+    "estimated_resolution_days": 2,
+    "assigned_agent": null,
+    "resolution_notes": null,
+    "customer_satisfaction": null
+  },
+  "status": "success"
+}
+```
+
+### Check Complaint Status
+
+```bash
+curl -X POST "http://localhost:8000/api/complaint/status" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "ticket_id": "COMPLAINT12345"
+     }'
+```
+
+**Response:**
+
+```json
+{
+  "complaint": {
+    "ticket_id": "COMPLAINT12345",
+    "account_number": "123456789012",
+    "subject": "Unauthorized Transaction",
+    "description": "I have noticed an unauthorized transaction on my account.",
+    "category": "TRANSACTION",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "created_at": "2025-09-28T12:00:00Z",
+    "resolved_at": null,
+    "estimated_resolution_days": 2,
+    "assigned_agent": "AGENT123",
+    "resolution_notes": null,
+    "customer_satisfaction": null
+  },
+  "status": "success"
+}
+```
+
 ## 📍 Location Services
 
 ### Locate Branches

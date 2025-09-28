@@ -61,3 +61,14 @@
 2025-09-27 01:31:17,534 - __main__ - INFO - Starting BankWise AI Banking Support API
 2025-09-27 01:31:20,094 - database - INFO - BankWise AI Banking Support API - Database tables already exist
 2025-09-27 01:31:20,232 - __main__ - INFO - Database initialized successfully
+2025-09-28 18:11:30,025 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-28 18:11:33,738 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-28 18:11:34,046 - __main__ - INFO - Database initialized successfully
+2025-09-28 18:13:47,566 - routes.complaint - INFO - Complaint creation request for account: 486754711183
+2025-09-28 18:13:47,566 - routes.complaint - INFO - Complaint created successfully with ticket ID: COMPLAINT38034
+2025-09-28 18:24:54,699 - routes.branch - INFO - Branch locator request for city: delhi, limit: 3
+2025-09-28 18:24:57,171 - routes.branch - INFO - Branches located from mock data in city: delhi
+2025-09-28 19:07:28,007 - routes.atm - INFO - ATM locator request for pincode: 286355, limit: 3
+2025-09-28 19:07:30,620 - routes.atm - INFO - ATMs located from mock data for pincode: 286355
+2025-09-28 19:48:24,760 - routes.fd - INFO - FD rates request for tenure: None
+2025-09-28 19:48:27,126 - routes.fd - INFO - FD rates retrieved from mock data

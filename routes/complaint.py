@@ -10,6 +10,7 @@ from models import (
     ComplaintRequest,
     ComplaintStatusRequest,
     ComplaintResponse,
+    Complaint,
     Status,
 )
 
@@ -18,26 +19,56 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/complaint", tags=["complaint"])
 
 
+# Configuration for complaint priority and resolution time
+COMPLAINT_CONFIG = {
+    "ACCOUNT": {"priority": "MEDIUM", "days": 5},
+    "CARD": {"priority": "HIGH", "days": 3},
+    "TRANSACTION": {"priority": "HIGH", "days": 2},
+    "ATM": {"priority": "MEDIUM", "days": 7},
+    "BRANCH": {"priority": "LOW", "days": 10},
+    "LOAN": {"priority": "HIGH", "days": 7},
+    "FD": {"priority": "LOW", "days": 10},
+    "NET_BANKING": {"priority": "MEDIUM", "days": 3},
+    "MOBILE_BANKING": {"priority": "MEDIUM", "days": 3},
+    "OTHER": {"priority": "LOW", "days": 15},
+    "DEFAULT": {"priority": "LOW", "days": 15}
+}
+
+
 @router.post("/new", response_model=ComplaintResponse)
 async def create_complaint(request: ComplaintRequest):
     """Create a new complaint"""
     try:
-        logger.info(f"Complaint creation request for category: {request.category}")
+        logger.info(f"Complaint creation request for account: {request.account_number}")
 
-        # Generate complaint ticket
-        ticket_id = f"COMPLAINT{random.randint(10000, 99999)}"
-        created_at = datetime.now()
-        estimated_days = random.randint(3, 15)
+        # Determine priority and resolution days from config
+        config = COMPLAINT_CONFIG.get(request.category.upper(), COMPLAINT_CONFIG["DEFAULT"])
+        priority = config["priority"]
+        estimated_days = config["days"]
+
+        # Create a new complaint object
+        new_complaint = Complaint(
+            ticket_id=f"COMPLAINT{random.randint(10000, 99999)}",
+            account_number=request.account_number,
+            subject=request.subject,
+            description=request.description,
+            category=request.category,
+            status="OPEN",
+            priority=priority,
+            created_at=datetime.now().isoformat(),
+            estimated_resolution_days=estimated_days
+        )
+
+        # In a real application, you would save this to the database.
+        # For now, we can add it to our mock storage if we want to retrieve it later.
+        # mock_storage.complaints.append(new_complaint.dict())
 
         response = ComplaintResponse(
-            ticket_id=ticket_id,
-            content="OPEN",
-            created_at=created_at.isoformat(),
-            estimated_resolution_days=estimated_days,
+            complaint=new_complaint,
             status=Status.SUCCESS,
         )
 
-        logger.info(f"Complaint created successfully with ticket ID: {ticket_id}")
+        logger.info(f"Complaint created successfully with ticket ID: {new_complaint.ticket_id}")
         return response
 
     except Exception as e:
@@ -54,36 +85,30 @@ async def get_complaint_status(request: ComplaintStatusRequest):
         # Try to get from database first
         async with db_manager.get_connection() as conn:
             if conn:
-                complaint = await conn.fetchrow(
+                complaint_data = await conn.fetchrow(
                     "SELECT * FROM complaints WHERE ticket_id = $1", request.ticket_id
                 )
-                if complaint:
+                if complaint_data:
+                    complaint = Complaint(**complaint_data)
                     response = ComplaintResponse(
-                        ticket_id=complaint["ticket_id"],
-                        content=complaint["status"],
-                        created_at=complaint["created_at"].isoformat(),
-                        estimated_resolution_days=complaint[
-                            "estimated_resolution_days"
-                        ],
+                        complaint=complaint,
                         status=Status.SUCCESS,
                     )
-
                     logger.info(
                         f"Complaint status retrieved from database for ticket ID: {request.ticket_id}"
                     )
                     return response
 
         # Fallback to mock data
-        complaint = mock_storage.get_complaint_by_id(request.ticket_id)
-        if not complaint:
+        complaint_data = mock_storage.get_complaint_by_id(request.ticket_id)
+        if not complaint_data:
             logger.warning(f"Complaint not found with ticket ID: {request.ticket_id}")
             raise HTTPException(status_code=404, detail="Complaint not found")
 
+        complaint = Complaint(**complaint_data)
+
         response = ComplaintResponse(
-            ticket_id=complaint["ticket_id"],
-            content=complaint["status"],
-            created_at=complaint["created_at"],
-            estimated_resolution_days=complaint["estimated_resolution_days"],
+            complaint=complaint,
             status=Status.SUCCESS,
         )
 

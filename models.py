@@ -101,6 +101,7 @@ class DisputeRequest(BaseModel):
 
 
 class ComplaintRequest(BaseModel):
+    account_number: str
     subject: str
     description: str
     category: str
@@ -183,11 +184,24 @@ class DisputeResponse(BaseModel):
     status: Status
 
 
-class ComplaintResponse(BaseModel):
+class Complaint(BaseModel):
     ticket_id: str
-    content: str
+    account_number: str
+    subject: str
+    description: str
+    category: str
+    status: str
+    priority: str
     created_at: str
+    resolved_at: Optional[str] = None
     estimated_resolution_days: int
+    assigned_agent: Optional[str] = None
+    resolution_notes: Optional[str] = None
+    customer_satisfaction: Optional[int] = None
+
+
+class ComplaintResponse(BaseModel):
+    complaint: Complaint
     status: Status
 
 
