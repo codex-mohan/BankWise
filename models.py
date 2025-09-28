@@ -286,3 +286,35 @@ class ErrorResponse(BaseModel):
     error: str
     code: str
     details: Optional[Dict[str, Any]] = None
+
+
+class ChequeTrackingRequest(BaseModel):
+    """Request model for cheque tracking"""
+
+    cheque_number: str
+    account_number: str
+
+
+class ChequeTrackingEvent(BaseModel):
+    """Tracking event for a cheque's journey"""
+
+    event_type: str  # e.g., "ISSUED", "IN_TRANSIT", "DELIVERED"
+    description: str
+    timestamp: str  # ISO 8601 format
+    location: str
+
+
+class ChequeTrackingResponse(BaseModel):
+    """Response model for cheque tracking details"""
+
+    cheque_number: str
+    content: str  # Current status from ChequeStatusRequest
+    amount: Optional[float] = None
+    date: Optional[str] = None  # Issue date
+    clearing_date: Optional[str] = None
+    current_location: str
+    expected_clearing_date: str
+    issuer: str
+    payee: str
+    tracking_events: List[ChequeTrackingEvent]
+    status: Status

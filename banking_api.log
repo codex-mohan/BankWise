@@ -46,3 +46,18 @@
 2025-09-26 23:40:29,585 - __main__ - INFO - Starting BankWise AI Banking Support API
 2025-09-26 23:40:32,242 - database - INFO - BankWise AI Banking Support API - Database tables already exist
 2025-09-26 23:40:32,372 - __main__ - INFO - Database initialized successfully
+2025-09-27 00:09:30,300 - routes.cheque - INFO - Cheque status request for cheque number: 825691
+2025-09-27 00:09:34,341 - database - ERROR - Database connection error: relation "cheques" does not exist
+2025-09-27 00:09:34,341 - routes.cheque - ERROR - Error getting cheque status for cheque number 825691: generator didn't stop after athrow()
+2025-09-27 00:09:58,337 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-27 00:10:03,744 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-27 00:10:04,038 - __main__ - INFO - Database initialized successfully
+2025-09-27 00:10:10,060 - routes.cheque - INFO - Cheque status request for cheque number: 825691
+2025-09-27 00:10:10,590 - database - ERROR - Database connection error: relation "cheques" does not exist
+2025-09-27 00:10:10,590 - routes.cheque - ERROR - Error getting cheque status for cheque number 825691: generator didn't stop after athrow()
+2025-09-27 00:36:46,988 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-27 00:36:51,621 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-27 00:36:51,842 - __main__ - INFO - Database initialized successfully
+2025-09-27 01:31:17,534 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-27 01:31:20,094 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-27 01:31:20,232 - __main__ - INFO - Database initialized successfully
