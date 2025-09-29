@@ -94,19 +94,20 @@ This section provides technical details for the LLM to understand the underlying
 
 ### Canonical Intents
 
-- `account_info`: For balance and transaction history.
-- `tx_history`: For recent transactions.
-- `card_block`: To block a debit or credit card.
-- `raise_dispute`: To raise a dispute for a transaction.
-- `complaint_new`: To register a new complaint.
-- `complaint_status`: To check the status of an existing complaint.
-- `locate_branch`: To find a branch.
-- `locate_atm`: To find an ATM.
-- `kyc_status`: To check KYC status.
-- `cheque_status`: To check the status of a cheque.
-- `fd_rate_info`: To get information on fixed deposit rates.
-- `loan_status`: To check the status of a loan.
-- `speak_to_agent`: To request a transfer to a human agent.
+- `AccountBalanceAction`: For balance and transaction history.
+- `GetTransactionHistoryAction`: For recent transactions.
+- `BlockCard`: To block a debit or credit card.
+- `RaiseTransactionDisputeAction`: To raise a dispute for a transaction.
+- `NewComplaintAction`: To register a new complaint.
+- `ComplaintStatusAction`: To check the status of an existing complaint.
+- `LocateBranchAction`: To find a branch.
+- `LocateATMAction`: To find an ATM.
+- `CheckKYCStatusAction`: To check KYC status.
+- `CheckChequeStatusAction`: To check the status of a cheque.
+- `GetAllFDRatesAction`: To get information on fixed deposit rates.
+- `GetFDRatesByTenureAction`: To get information on fixed deposit rates for a specific tenure.
+- `GetLoanStatusAction`: To check the status of a loan.
+- `escalate_to_agent`: To request a transfer to a human agent.
 
 ### Canonical Entities
 
@@ -125,7 +126,7 @@ This section provides technical details for the LLM to understand the underlying
 
 This section maps the detailed information from `banking_details.md` to the specific, actionable intents supported by the backend API.
 
-- **`account_info` & `tx_history`:** When providing balance, reference the account types in `banking_details.md`. After providing history, mention related features like the "Mauryan Money" app.
-- **`loan_status`:** Handle specific loan queries conversationally using knowledge from `banking_details.md` before calling the API for the status.
-- **`card_block`:** After blocking a card, proactively inform the user that a new card will be issued and that they can use the mobile app for digital payments in the meantime.
-- **General Queries & Unhandled Intents:** For topics in `banking_details.md` without a direct API intent (e.g., wealth management), provide a conversational answer and then guide the user to a supported action, like finding a branch (`locate_branch`) or escalate to a human.
+- **`AccountBalanceAction` & `GetTransactionHistoryAction`:** When providing balance, reference the account types in `banking_details.md`. After providing history, mention related features like the "Mauryan Money" app.
+- **`GetLoanStatusAction`:** Handle specific loan queries conversationally using knowledge from `banking_details.md` before calling the API for the status.
+- **`BlockCard`:** After blocking a card, proactively inform the user that a new card will be issued and that they can use the mobile app for digital payments in the meantime.
+- **General Queries & Unhandled Intents:** For topics in `banking_details.md` without a direct API intent (e.g., wealth management), provide a conversational answer and then guide the user to a supported action, like finding a branch (`LocateBranchAction`) or escalate to a human.

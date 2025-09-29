@@ -137,7 +137,7 @@ async def health_check():
 
 
 # Include all route modules
-from routes import account, card, dispute, complaint, branch, atm, kyc, cheque, fd, loan, escalation, chat
+from routes import account, card, dispute, complaint, branch, atm, kyc, cheque, fd, loan, escalation, chat, sms, dashboard
 
 app.include_router(account.router)
 app.include_router(card.router)
@@ -151,6 +151,8 @@ app.include_router(fd.router)
 app.include_router(loan.router)
 app.include_router(escalation.router)
 app.include_router(chat.router)
+app.include_router(sms.router)
+app.include_router(dashboard.router)
 
 
 if __name__ == "__main__":

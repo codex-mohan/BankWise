@@ -257,3 +257,82 @@ curl -X POST "http://localhost:8000/api/escalate" \
   "estimated_wait_time": 15,
   "status": "success"
 }
+
+## 👨‍⚖️ Judge Dashboard
+
+### Access the Dashboard
+
+```bash
+# Open in browser
+http://localhost:8000/dashboard/
+```
+
+### Dashboard API Endpoint
+
+```bash
+# Get dashboard data (JSON format)
+curl "http://localhost:8000/dashboard/api?source=mock&data_type=accounts"
+```
+
+**Response:**
+
+```json
+{
+  "data": [
+    {
+      "account_number": "810224329338",
+      "account_type": "Savings",
+      "balance": 85985.32,
+      "currency": "INR",
+      "customer_name": "Rayaan Kata",
+      "customer_id": "CUST52914",
+      "branch_code": "BRANCH124",
+      "ifsc_code": "BARB9462",
+      "kyc_status": "PENDING",
+      "kyc_level": "LEVEL_3",
+      "last_updated": "2025-05-02T20:46:59.184297",
+      "account_status": "ACTIVE",
+      "linked_cards": ["****5030", "****8159"],
+      "mobile_numbers": ["+918441918127", "+918326653923"]
+    }
+  ],
+  "data_type": "accounts",
+  "source": "mock",
+  "timestamp": "2025-09-29T18:20:00.123456",
+  "count": 1
+}
+```
+
+### Available Data Types
+
+- **accounts**: Customer account information
+- **transactions**: Transaction history
+- **branches**: Bank branch details
+- **atms**: ATM locations and status
+- **complaints**: Customer complaints
+- **disputes**: Transaction disputes
+- **loans**: Loan information
+- **fd_rates**: Fixed deposit rates
+- **cards**: Credit/debit card details
+- **cheques**: Cheque status information
+
+### Available Data Sources
+
+- **mock**: JSON files in `mock_data/` directory
+- **db**: PostgreSQL database (if configured)
+
+### Query Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `source` | string | `mock` | Data source (mock or db) |
+| `data_type` | string | `accounts` | Type of data to retrieve |
+
+### Features
+
+- **Interactive Web Interface**: Professional dashboard with sortable tables
+- **Dual Data Sources**: Switch between mock data and database
+- **Multiple Views**: Table view and JSON view
+- **Responsive Design**: Works on desktop and mobile
+- **Auto-refresh**: Data updates every 5 minutes
+- **Error Handling**: Graceful handling of missing data

@@ -6,6 +6,7 @@ import random
 
 from mock_data_storage import mock_storage
 from database import db_manager
+from services.sms_service import sms_service, SMSTemplates
 from models import (
     ComplaintRequest,
     ComplaintStatusRequest,
@@ -41,6 +42,12 @@ async def create_complaint(request: ComplaintRequest):
     try:
         logger.info(f"Complaint creation request for account: {request.account_number}")
 
+        # Get account details to retrieve customer info and mobile numbers
+        account = mock_storage.get_account_by_number(request.account_number)
+        if not account:
+            logger.warning(f"Account not found: {request.account_number}")
+            raise HTTPException(status_code=404, detail="Account not found")
+
         # Determine priority and resolution days from config
         config = COMPLAINT_CONFIG.get(request.category.upper(), COMPLAINT_CONFIG["DEFAULT"])
         priority = config["priority"]
@@ -59,9 +66,32 @@ async def create_complaint(request: ComplaintRequest):
             estimated_resolution_days=estimated_days
         )
 
-        # In a real application, you would save this to the database.
-        # For now, we can add it to our mock storage if we want to retrieve it later.
-        # mock_storage.complaints.append(new_complaint.dict())
+        # Add to mock storage for future retrieval
+        mock_storage.complaints.append(new_complaint.dict())
+
+        # Send SMS notification to customer
+        if account.get("mobile_numbers") and sms_service.is_enabled():
+            customer_name = account.get("customer_name", "Customer")
+            sms_message = SMSTemplates.complaint_confirmation(
+                new_complaint.ticket_id,
+                customer_name
+            )
+            
+            # Send SMS to all mobile numbers
+            sms_result = await sms_service.send_bulk_sms(
+                account["mobile_numbers"],
+                sms_message
+            )
+            
+            if sms_result["success"]:
+                logger.info(f"SMS notification sent for complaint {new_complaint.ticket_id} to {len(sms_result['successful_sends'])} numbers")
+            else:
+                logger.warning(f"Failed to send SMS notification for complaint {new_complaint.ticket_id}")
+        else:
+            if not account.get("mobile_numbers"):
+                logger.warning(f"No mobile numbers found for account {request.account_number}")
+            if not sms_service.is_enabled():
+                logger.info("SMS service not enabled, skipping notification")
 
         response = ComplaintResponse(
             complaint=new_complaint,
@@ -71,8 +101,69 @@ async def create_complaint(request: ComplaintRequest):
         logger.info(f"Complaint created successfully with ticket ID: {new_complaint.ticket_id}")
         return response
 
+    except HTTPException:
+        raise
     except Exception as e:
         logger.error(f"Error creating complaint: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.post("/update-status", response_model=ComplaintResponse)
+async def update_complaint_status(request: ComplaintStatusRequest):
+    """Update complaint status and send SMS notification if resolved"""
+    try:
+        logger.info(f"Updating complaint status for ticket ID: {request.ticket_id}")
+        
+        # Find the complaint in mock storage
+        complaint_data = mock_storage.get_complaint_by_id(request.ticket_id)
+        if not complaint_data:
+            logger.warning(f"Complaint not found with ticket ID: {request.ticket_id}")
+            raise HTTPException(status_code=404, detail="Complaint not found")
+        
+        # Get account details for SMS notification
+        account = mock_storage.get_account_by_number(complaint_data["account_number"])
+        if not account:
+            logger.warning(f"Account not found: {complaint_data['account_number']}")
+            raise HTTPException(status_code=404, detail="Account not found")
+        
+        # Update complaint status
+        original_status = complaint_data["status"]
+        complaint_data["status"] = "RESOLVED"
+        complaint_data["resolved_at"] = datetime.now().isoformat()
+        complaint_data["resolution_notes"] = "Complaint has been resolved successfully"
+        
+        # Send SMS notification if status changed to resolved
+        if original_status != "RESOLVED" and account.get("mobile_numbers") and sms_service.is_enabled():
+            customer_name = account.get("customer_name", "Customer")
+            sms_message = SMSTemplates.complaint_resolution(
+                request.ticket_id,
+                customer_name
+            )
+            
+            # Send SMS to all mobile numbers
+            sms_result = await sms_service.send_bulk_sms(
+                account["mobile_numbers"],
+                sms_message
+            )
+            
+            if sms_result["success"]:
+                logger.info(f"SMS notification sent for complaint resolution {request.ticket_id} to {len(sms_result['successful_sends'])} numbers")
+            else:
+                logger.warning(f"Failed to send SMS notification for complaint resolution {request.ticket_id}")
+        
+        complaint = Complaint(**complaint_data)
+        response = ComplaintResponse(
+            complaint=complaint,
+            status=Status.SUCCESS,
+        )
+        
+        logger.info(f"Complaint status updated successfully for ticket ID: {request.ticket_id}")
+        return response
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error updating complaint status for ticket ID {request.ticket_id}: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 

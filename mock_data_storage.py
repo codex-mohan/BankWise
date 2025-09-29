@@ -127,10 +127,15 @@ class MockDataStorage:
         accounts = []
         account_types = ["Savings", "Current", "Salary"]
 
-        for i in range(100):
+        for i in range(20):
             account_number = (
                 f"{random.randint(1000, 9999)}{random.randint(10000000, 99999999)}"
             )
+            # Generate mobile numbers list (1-3 numbers per account)
+            mobile_numbers = []
+            for _ in range(random.randint(1, 3)):
+                mobile_numbers.append(f"+91{random.randint(7000000000, 9999999999)}")
+            
             account = {
                 "account_number": account_number,
                 "account_type": random.choice(account_types),
@@ -150,6 +155,7 @@ class MockDataStorage:
                     f"****{random.randint(1000, 9999)}"
                     for _ in range(random.randint(1, 3))
                 ],
+                "mobile_numbers": mobile_numbers,
             }
             accounts.append(account)
 
@@ -211,7 +217,7 @@ class MockDataStorage:
 
         for account in self.accounts:
             # Generate 50-200 transactions per account
-            num_transactions = random.randint(50, 200)
+            num_transactions = random.randint(1, 3)
             for i in range(num_transactions):
                 transaction_date = datetime.now() - timedelta(
                     days=random.randint(1, 730)
@@ -279,7 +285,7 @@ class MockDataStorage:
         ]
 
         for city in cities:
-            for i in range(random.randint(3, 8)):
+            for i in range(random.randint(2, 5)):
                 branch = {
                     "name": f"BOB {city} {random.choice(['Main', 'Branch', 'Road', 'Center'])}",
                     "address": fake.street_address(),
@@ -330,7 +336,7 @@ class MockDataStorage:
         ]
 
         for city in cities:
-            for i in range(random.randint(10, 25)):
+            for i in range(random.randint(5, 15)):
                 atm = {
                     "id": f"ATM{random.randint(10000, 99999)}",
                     "address": fake.street_address(),
@@ -378,7 +384,7 @@ class MockDataStorage:
         ]
         statuses = ["OPEN", "IN_PROGRESS", "RESOLVED", "CLOSED", "ESCALATED"]
 
-        for i in range(200):
+        for i in range(50):
             complaint_date = datetime.now() - timedelta(days=random.randint(1, 365))
             resolved_date = None
             if random.random() < 0.7:  # 70% resolved
@@ -423,7 +429,7 @@ class MockDataStorage:
         ]
         statuses = ["OPEN", "UNDER_REVIEW", "APPROVED", "REJECTED", "RESOLVED"]
 
-        for i in range(100):
+        for i in range(30):
             dispute_date = datetime.now() - timedelta(days=random.randint(1, 90))
             resolved_date = None
             if random.random() < 0.6:  # 60% resolved
@@ -472,7 +478,7 @@ class MockDataStorage:
         ]
         statuses = ["DISBURSED", "ACTIVE", "COMPLETED", "DEFAULT", "CLOSED"]
 
-        for i in range(150):
+        for i in range(40):
             disbursement_date = datetime.now() - timedelta(
                 days=random.randint(30, 3650)
             )
@@ -546,7 +552,7 @@ class MockDataStorage:
         statuses = ["Cleared", "Pending", "Bounced", "Under Process"]
 
         for account in self.accounts:
-            for _ in range(random.randint(1, 5)):
+            for _ in range(random.randint(1, 3)):
                 status = random.choice(statuses)
                 issue_date = datetime.now() - timedelta(days=random.randint(1, 365))
                 clearing_date = None

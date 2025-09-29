@@ -1,262 +1,262 @@
 [
   {
     "tenure": 7,
-    "rate": 7.31,
+    "rate": 5.22,
     "customer_type": "NORMAL",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655122",
-    "special_features": "QUARTERLY_PAYOUT"
+    "last_updated": "2025-09-29T20:46:59.193504",
+    "special_features": "CUMULATIVE"
   },
   {
     "tenure": 7,
+    "rate": 4.26,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193507",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 14,
+    "rate": 5.79,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193509",
+    "special_features": "QUARTERLY_PAYOUT"
+  },
+  {
+    "tenure": 14,
+    "rate": 5.09,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193511",
+    "special_features": "TAX_SAVING"
+  },
+  {
+    "tenure": 30,
+    "rate": 6.29,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193513",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 30,
+    "rate": 5.97,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193515",
+    "special_features": "CUMULATIVE"
+  },
+  {
+    "tenure": 45,
+    "rate": 3.75,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193517",
+    "special_features": "TAX_SAVING"
+  },
+  {
+    "tenure": 45,
+    "rate": 5.78,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193518",
+    "special_features": "TAX_SAVING"
+  },
+  {
+    "tenure": 60,
+    "rate": 7.04,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193520",
+    "special_features": "TAX_SAVING"
+  },
+  {
+    "tenure": 60,
+    "rate": 6.83,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193521",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 90,
+    "rate": 7.28,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193522",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 90,
+    "rate": 7.79,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193524",
+    "special_features": "TAX_SAVING"
+  },
+  {
+    "tenure": 120,
+    "rate": 3.8,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193525",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 120,
     "rate": 5.94,
     "customer_type": "SENIOR_CITIZEN",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655126",
+    "last_updated": "2025-09-29T20:46:59.193526",
     "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 14,
-    "rate": 8.17,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655128",
-    "special_features": "CUMULATIVE"
-  },
-  {
-    "tenure": 14,
-    "rate": 4.51,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655130",
-    "special_features": "QUARTERLY_PAYOUT"
-  },
-  {
-    "tenure": 30,
-    "rate": 7.76,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655132",
-    "special_features": "CUMULATIVE"
-  },
-  {
-    "tenure": 30,
-    "rate": 5.04,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655135",
-    "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 45,
-    "rate": 4.66,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655137",
-    "special_features": "QUARTERLY_PAYOUT"
-  },
-  {
-    "tenure": 45,
-    "rate": 5.32,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655138",
-    "special_features": "TAX_SAVING"
-  },
-  {
-    "tenure": 60,
-    "rate": 4.64,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655140",
-    "special_features": "QUARTERLY_PAYOUT"
-  },
-  {
-    "tenure": 60,
-    "rate": 4.55,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655141",
-    "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 90,
-    "rate": 4.21,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655143",
-    "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 90,
-    "rate": 4.93,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655144",
-    "special_features": "CUMULATIVE"
-  },
-  {
-    "tenure": 120,
-    "rate": 4.39,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655147",
-    "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 120,
-    "rate": 7.5,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655149",
-    "special_features": "TAX_SAVING"
   },
   {
     "tenure": 180,
-    "rate": 4.78,
+    "rate": 6.05,
     "customer_type": "NORMAL",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655150",
-    "special_features": "QUARTERLY_PAYOUT"
-  },
-  {
-    "tenure": 180,
-    "rate": 5.42,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655152",
-    "special_features": "TAX_SAVING"
-  },
-  {
-    "tenure": 365,
-    "rate": 5.65,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655153",
+    "last_updated": "2025-09-29T20:46:59.193528",
     "special_features": "CUMULATIVE"
   },
   {
-    "tenure": 365,
-    "rate": 7.86,
+    "tenure": 180,
+    "rate": 5.11,
     "customer_type": "SENIOR_CITIZEN",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655155",
-    "special_features": "TAX_SAVING"
+    "last_updated": "2025-09-29T20:46:59.193529",
+    "special_features": "QUARTERLY_PAYOUT"
   },
   {
-    "tenure": 730,
-    "rate": 4.77,
+    "tenure": 365,
+    "rate": 6.51,
     "customer_type": "NORMAL",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655158",
-    "special_features": "TAX_SAVING"
+    "last_updated": "2025-09-29T20:46:59.193530",
+    "special_features": "MONTHLY_PAYOUT"
   },
   {
-    "tenure": 730,
-    "rate": 6.68,
+    "tenure": 365,
+    "rate": 8.6,
     "customer_type": "SENIOR_CITIZEN",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655159",
+    "last_updated": "2025-09-29T20:46:59.193532",
+    "special_features": "QUARTERLY_PAYOUT"
+  },
+  {
+    "tenure": 730,
+    "rate": 4.81,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193533",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 730,
+    "rate": 5.88,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193535",
     "special_features": "TAX_SAVING"
   },
   {
     "tenure": 1095,
-    "rate": 8.2,
+    "rate": 8.34,
     "customer_type": "NORMAL",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655161",
-    "special_features": "CUMULATIVE"
+    "last_updated": "2025-09-29T20:46:59.193536",
+    "special_features": "MONTHLY_PAYOUT"
   },
   {
     "tenure": 1095,
-    "rate": 6.82,
+    "rate": 6.11,
     "customer_type": "SENIOR_CITIZEN",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655162",
-    "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 1825,
-    "rate": 6.03,
-    "customer_type": "NORMAL",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655164",
+    "last_updated": "2025-09-29T20:46:59.193537",
     "special_features": "CUMULATIVE"
   },
   {
     "tenure": 1825,
-    "rate": 6.15,
-    "customer_type": "SENIOR_CITIZEN",
-    "min_amount": 10000,
-    "max_amount": 10000000,
-    "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655165",
-    "special_features": "MONTHLY_PAYOUT"
-  },
-  {
-    "tenure": 3650,
-    "rate": 3.91,
+    "rate": 4.68,
     "customer_type": "NORMAL",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655167",
-    "special_features": "CUMULATIVE"
+    "last_updated": "2025-09-29T20:46:59.193539",
+    "special_features": "QUARTERLY_PAYOUT"
   },
   {
-    "tenure": 3650,
-    "rate": 5.71,
+    "tenure": 1825,
+    "rate": 5.13,
     "customer_type": "SENIOR_CITIZEN",
     "min_amount": 10000,
     "max_amount": 10000000,
     "currency": "INR",
-    "last_updated": "2025-09-22T00:39:33.655168",
+    "last_updated": "2025-09-29T20:46:59.193540",
+    "special_features": "MONTHLY_PAYOUT"
+  },
+  {
+    "tenure": 3650,
+    "rate": 5.78,
+    "customer_type": "NORMAL",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193542",
     "special_features": "TAX_SAVING"
+  },
+  {
+    "tenure": 3650,
+    "rate": 8.440000000000001,
+    "customer_type": "SENIOR_CITIZEN",
+    "min_amount": 10000,
+    "max_amount": 10000000,
+    "currency": "INR",
+    "last_updated": "2025-09-29T20:46:59.193544",
+    "special_features": "MONTHLY_PAYOUT"
   }
 ]

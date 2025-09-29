@@ -94,6 +94,7 @@ class CardBlockRequest(BaseModel):
 
 
 class DisputeRequest(BaseModel):
+    account_number: str
     amount: float
     transaction_date: str
     reason: str

@@ -72,3 +72,205 @@
 2025-09-28 19:07:30,620 - routes.atm - INFO - ATMs located from mock data for pincode: 286355
 2025-09-28 19:48:24,760 - routes.fd - INFO - FD rates request for tenure: None
 2025-09-28 19:48:27,126 - routes.fd - INFO - FD rates retrieved from mock data
+2025-09-29 18:00:09,069 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 18:00:09,114 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 18:00:11,400 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 18:00:11,492 - __main__ - INFO - Database initialized successfully
+2025-09-29 18:24:49,710 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 18:24:49,750 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 18:24:52,502 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 18:24:57,623 - database - WARNING - Error checking cheques table: relation "cheques" does not exist
+2025-09-29 18:24:57,623 - database - INFO - Found empty tables: ['accounts', 'cards', 'transactions', 'branches', 'atms', 'complaints', 'disputes', 'loans', 'fd_rates', 'cheques']. Populating with data...
+2025-09-29 18:24:57,623 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 18:24:58,060 - database - ERROR - Error checking/populating data: column "linked_cards" of relation "accounts" does not exist
+2025-09-29 18:24:58,162 - __main__ - INFO - Database initialized successfully
+2025-09-29 18:27:12,238 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 18:27:12,268 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 18:27:15,555 - database - INFO - Creating database tables...
+2025-09-29 18:27:16,751 - database - INFO - BankWise AI Banking Support API - All tables created successfully
+2025-09-29 18:27:16,751 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 18:27:39,210 - database - ERROR - Database initialization failed: insert or update on table "cards" violates foreign key constraint "cards_account_number_fkey"
+DETAIL:  Key (account_number)=(619297175888) is not present in table "accounts".
+2025-09-29 18:27:39,210 - __main__ - WARNING - Database initialization failed, using mock data only
+2025-09-29 18:27:39,211 - __main__ - INFO - Initialized mock data with 100 accounts, 182 cards, 13374 transactions
+2025-09-29 18:32:36,807 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 18:32:36,839 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 18:32:43,872 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 18:32:47,678 - database - INFO - Found empty tables: ['cards', 'transactions', 'branches', 'atms', 'complaints', 'disputes', 'loans', 'fd_rates', 'cheques']. Populating with data...
+2025-09-29 18:32:47,678 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 18:35:22,864 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 18:35:22,904 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 18:35:25,818 - database - INFO - Creating database tables...
+2025-09-29 18:35:28,082 - database - INFO - BankWise AI Banking Support API - All tables created successfully
+2025-09-29 18:35:28,082 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 18:43:47,815 - database - ERROR - Database initialization failed: duplicate key value violates unique constraint "transactions_transaction_id_key"
+DETAIL:  Key (transaction_id)=(TXN4900140) already exists.
+2025-09-29 18:43:47,815 - __main__ - WARNING - Database initialization failed, using mock data only
+2025-09-29 18:43:47,815 - __main__ - INFO - Initialized mock data with 100 accounts, 203 cards, 12660 transactions
+2025-09-29 18:49:59,313 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 18:49:59,344 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 18:50:02,292 - database - INFO - Creating database tables...
+2025-09-29 18:50:04,954 - database - INFO - BankWise AI Banking Support API - All tables created successfully
+2025-09-29 18:50:04,954 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 18:51:07,110 - database - INFO - Inserted 203 cards, skipped 0 cards with invalid references
+2025-09-29 18:57:34,876 - database - WARNING - Failed to insert transaction TXN4900140: duplicate key value violates unique constraint "transactions_transaction_id_key"
+DETAIL:  Key (transaction_id)=(TXN4900140) already exists.
+2025-09-29 19:01:20,629 - database - WARNING - Failed to insert transaction TXN6625560: duplicate key value violates unique constraint "transactions_transaction_id_key"
+DETAIL:  Key (transaction_id)=(TXN6625560) already exists.
+2025-09-29 19:04:57,343 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 19:04:57,391 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 19:05:26,677 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 19:05:26,708 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 19:05:29,423 - database - INFO - Creating database tables...
+2025-09-29 19:05:31,573 - database - INFO - BankWise AI Banking Support API - All tables created successfully
+2025-09-29 19:05:31,573 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 19:06:31,195 - database - INFO - Inserted 201 cards, skipped 0 cards with invalid references
+2025-09-29 19:12:39,284 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 19:12:39,325 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 19:12:43,396 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 19:12:43,397 - database - INFO - FORCE_POPULATE_DB is enabled - clearing and repopulating database...
+2025-09-29 19:12:43,703 - database - ERROR - Error clearing tables: permission denied to set parameter "session_replication_role"
+2025-09-29 19:12:43,960 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 19:13:47,507 - database - INFO - Inserted 212 cards, skipped 0 cards with invalid references
+2025-09-29 20:28:15,840 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 20:28:15,879 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 20:28:18,388 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 20:28:18,388 - database - INFO - FORCE_POPULATE_DB is enabled - clearing and repopulating database...
+2025-09-29 20:28:18,507 - database - ERROR - Error clearing tables: permission denied to set parameter "session_replication_role"
+2025-09-29 20:28:18,617 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 20:46:59,257 - services.sms_service - INFO - Twilio SMS service initialized successfully
+2025-09-29 20:46:59,297 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 20:47:03,611 - database - INFO - Creating database tables...
+2025-09-29 20:47:07,297 - database - INFO - BankWise AI Banking Support API - All tables created successfully
+2025-09-29 20:47:07,297 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 20:47:49,436 - database - INFO - Inserted 39 cards, skipped 0 cards with invalid references
+2025-09-29 20:48:17,295 - database - INFO - Inserted 39 transactions, skipped 0 transactions with invalid references
+2025-09-29 20:50:56,126 - database - INFO - Inserted 50 complaints, skipped 0 complaints with invalid references
+2025-09-29 20:51:08,698 - database - INFO - Inserted 30 disputes, skipped 0 disputes with invalid references
+2025-09-29 20:51:54,051 - database - INFO - Inserted 40 loans, skipped 0 loans with invalid references
+2025-09-29 20:52:48,616 - database - INFO - Inserted 37 cheques, skipped 0 cheques with invalid references
+2025-09-29 20:52:48,617 - database - INFO - BankWise AI Banking Support API - Database populated with 20 accounts, 39 cards, 39 transactions (limited), 33 branches, 87 ATMs, 50 complaints, 30 disputes, 40 loans, 26 FD rates, and 37 cheques
+2025-09-29 20:52:48,617 - database - INFO - BankWise AI Banking Support API - Database initialized successfully
+2025-09-29 20:52:48,737 - __main__ - INFO - Database initialized successfully
+2025-09-29 22:06:12,144 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 22:06:33,428 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 22:06:33,512 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 22:06:37,333 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 22:06:37,333 - database - INFO - FORCE_POPULATE_DB is enabled - clearing and repopulating database...
+2025-09-29 22:06:37,468 - database - ERROR - Error clearing tables: permission denied to set parameter "session_replication_role"
+2025-09-29 22:06:37,766 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-09-29 22:06:38,275 - database - WARNING - Failed to insert account 810224329338: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(810224329338) already exists.
+2025-09-29 22:06:38,582 - database - WARNING - Failed to insert account 669723994741: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(669723994741) already exists.
+2025-09-29 22:06:38,764 - database - WARNING - Failed to insert account 305176132128: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(305176132128) already exists.
+2025-09-29 22:06:38,999 - database - WARNING - Failed to insert account 898370214157: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(898370214157) already exists.
+2025-09-29 22:06:39,145 - database - WARNING - Failed to insert account 229283647490: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(229283647490) already exists.
+2025-09-29 22:06:39,396 - database - WARNING - Failed to insert account 420715023214: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(420715023214) already exists.
+2025-09-29 22:06:39,708 - database - WARNING - Failed to insert account 178995971160: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(178995971160) already exists.
+2025-09-29 22:06:39,858 - database - WARNING - Failed to insert account 416930141726: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(416930141726) already exists.
+2025-09-29 22:06:40,220 - database - WARNING - Failed to insert account 515553284672: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(515553284672) already exists.
+2025-09-29 22:06:40,527 - database - WARNING - Failed to insert account 919173669942: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(919173669942) already exists.
+2025-09-29 22:06:40,769 - database - WARNING - Failed to insert account 660168183947: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(660168183947) already exists.
+2025-09-29 22:06:40,992 - database - WARNING - Failed to insert account 894691507189: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(894691507189) already exists.
+2025-09-29 22:06:41,347 - database - WARNING - Failed to insert account 325179810320: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(325179810320) already exists.
+2025-09-29 22:06:41,559 - database - WARNING - Failed to insert account 767082318059: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(767082318059) already exists.
+2025-09-29 22:06:41,961 - database - WARNING - Failed to insert account 806462072537: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(806462072537) already exists.
+2025-09-29 22:06:42,099 - database - WARNING - Failed to insert account 613432553489: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(613432553489) already exists.
+2025-09-29 22:06:42,243 - database - WARNING - Failed to insert account 865087320592: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(865087320592) already exists.
+2025-09-29 22:06:42,575 - database - WARNING - Failed to insert account 164878625431: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(164878625431) already exists.
+2025-09-29 22:06:42,882 - database - WARNING - Failed to insert account 609465124007: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(609465124007) already exists.
+2025-09-29 22:06:43,190 - database - WARNING - Failed to insert account 889768362801: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(889768362801) already exists.
+2025-09-29 22:06:43,190 - database - INFO - Inserted 0 cards, skipped 39 cards with invalid references
+2025-09-29 22:06:43,190 - database - INFO - Inserted 0 transactions, skipped 39 transactions with invalid references
+2025-09-29 22:06:43,906 - database - ERROR - Error checking/populating data: duplicate key value violates unique constraint "branches_ifsc_key"
+DETAIL:  Key (ifsc)=(BARB8277) already exists.
+2025-09-29 22:06:44,216 - __main__ - INFO - Database initialized successfully
+2025-09-29 22:06:57,603 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 22:06:57,646 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 22:07:00,700 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 22:07:05,922 - database - INFO - All tables contain data. Skipping population.
+2025-09-29 22:07:06,127 - __main__ - INFO - Database initialized successfully
+2025-09-29 22:56:35,655 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 22:56:35,756 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 22:56:39,211 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 22:56:43,806 - database - INFO - All tables contain data. Skipping population.
+2025-09-29 22:56:43,912 - __main__ - INFO - Database initialized successfully
+2025-09-29 22:57:39,414 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 22:57:39,486 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 22:57:43,492 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 22:57:47,313 - database - INFO - All tables contain data. Skipping population.
+2025-09-29 22:57:47,493 - __main__ - INFO - Database initialized successfully
+2025-09-29 23:31:42,592 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 23:31:42,648 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 23:31:45,785 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 23:31:49,267 - database - INFO - All tables contain data. Skipping population.
+2025-09-29 23:31:49,572 - __main__ - INFO - Database initialized successfully
+2025-09-29 23:35:17,626 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-09-29 23:35:17,635 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-29 23:35:17,635 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-09-29 23:35:17,986 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-09-29 23:35:17,986 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-29 23:35:17,986 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-09-29 23:35:24,883 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=transactions
+2025-09-29 23:35:24,892 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-09-29 23:35:24,892 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-09-29 23:35:27,456 - routes.dashboard - INFO - Dashboard request: source=db, data_type=transactions
+2025-09-29 23:35:29,117 - routes.dashboard - INFO - Loaded 39 transactions records from database
+2025-09-29 23:35:29,324 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-09-29 23:43:59,325 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-09-29 23:43:59,326 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-29 23:43:59,326 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-09-29 23:44:09,647 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-29 23:44:09,719 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-29 23:44:13,313 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-09-29 23:44:17,094 - database - INFO - All tables contain data. Skipping population.
+2025-09-29 23:44:17,299 - __main__ - INFO - Database initialized successfully
+2025-09-29 23:44:22,075 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-09-29 23:44:22,075 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-29 23:44:22,075 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-09-29 23:44:22,123 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-09-29 23:44:22,123 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-29 23:44:22,123 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-09-29 23:47:00,964 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-09-29 23:47:00,965 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-09-29 23:47:00,965 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-09-29 23:47:07,172 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-09-29 23:47:07,182 - routes.dashboard - INFO - Loaded 87 atms records from mock data
+2025-09-29 23:47:07,182 - routes.dashboard - INFO - Returning 87 records for atms
+2025-09-29 23:47:13,379 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-09-29 23:47:13,388 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-09-29 23:47:13,388 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-09-29 23:47:13,830 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-09-29 23:47:13,839 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-09-29 23:47:13,839 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-09-29 23:47:26,512 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-09-29 23:47:26,521 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-09-29 23:47:26,521 - routes.dashboard - INFO - Returning 40 records for loans
+2025-09-29 23:47:31,866 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-09-29 23:47:31,875 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-09-29 23:47:31,875 - routes.dashboard - INFO - Returning 39 records for cards
+2025-09-29 23:47:32,495 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-09-29 23:47:32,504 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-09-29 23:47:32,504 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-09-29 23:47:33,301 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-09-29 23:47:33,302 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-09-29 23:47:33,302 - routes.dashboard - INFO - Returning 37 records for cheques

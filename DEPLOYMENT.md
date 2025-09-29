@@ -55,7 +55,7 @@ LOG_LEVEL=INFO
 4. Configure the service:
    - **Name**: `bankwise-ai-banking-api`
    - **Runtime**: Python
-   - **Build Command**: `pip install -r requirements.txt`
+   - **Build Command**: `pip install -r requirements.txt` (or `uv pip install -r requirements.txt` if you use uv)
    - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port 10000`
    - **Region**: Choose the same region as your Neon DB
 
