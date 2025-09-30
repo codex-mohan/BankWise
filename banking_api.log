@@ -274,3 +274,14 @@ DETAIL:  Key (ifsc)=(BARB8277) already exists.
 2025-09-29 23:47:33,301 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
 2025-09-29 23:47:33,302 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
 2025-09-29 23:47:33,302 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-09-30 18:11:19,026 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-09-30 18:11:19,085 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-09-30 18:11:19,086 - database - WARNING - DATABASE_URL not set, using mock data only - BankWise AI Banking Support API
+2025-09-30 18:11:19,086 - __main__ - WARNING - Database initialization failed, using mock data only
+2025-09-30 18:11:19,086 - __main__ - INFO - Initialized mock data with 20 accounts, 39 cards, 39 transactions
+2025-09-30 18:11:29,142 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-09-30 18:11:29,143 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-30 18:11:29,143 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-09-30 18:11:29,296 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-09-30 18:11:29,297 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-09-30 18:11:29,297 - routes.dashboard - INFO - Returning 20 records for accounts

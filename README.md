@@ -1,7 +1,7 @@
 # 🏦 BankWise API 🚀
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white&style=flat-square&labelWidth=20" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white&style=flat-square&labelWidth=20" alt="Python">
   <img src="https://img.shields.io/badge/FastAPI-0.104.1-green?logo=fastapi&logoColor=white&style=flat-square&labelWidth=20" alt="FastAPI">
   <img src="https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql&logoColor=white&style=flat-square&labelWidth=20" alt="PostgreSQL">
   <img src="https://img.shields.io/badge/NeonDB-Hosted-199ED8?logo=neon&logoColor=white&style=flat-square&labelWidth=20" alt="NeonDB">
@@ -249,7 +249,7 @@ graph TD
 1.  **Clone the repository**
 
     ```bash
-    git clone https://github.com/your-username/BankWise.git
+    git clone https://github.com/codex-mohan/BankWise.git
     cd BankWise
     ```
 
@@ -421,6 +421,8 @@ The Judge Dashboard provides a sophisticated web interface for hackathon judges 
 3. Toggle between Mock Data and Database sources
 4. View data in table or JSON format
 5. Click "View Details" for complex nested objects
+
+![Dashboard Screenshot](docs/dashboard.png)
 
 ## 🔒 Security Considerations
 
