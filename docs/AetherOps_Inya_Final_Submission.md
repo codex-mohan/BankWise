@@ -65,16 +65,9 @@ The AI agent "Aria" implements:
 Our agent employs a hybrid data retrieval strategy to ensure both accuracy and efficiency:
 
 - **Static Knowledge Base**: For general, non-user-specific information that does not change frequently, the agent relies on a static knowledge base. This includes details about banking products (e.g., FD rates, loan types), FAQs, branch hours, and general bank policies. This ensures fast, consistent answers for common queries.
--   **Dynamic API Actions**: For user-specific, real-time data, the agent triggers secure API actions. These actions retrieve dynamic information such as account balances, transaction histories, KYC status, and complaint details from the backend database.
+- **Dynamic API Actions**: For user-specific, real-time data, the agent triggers secure API actions. These actions retrieve dynamic information such as account balances, transaction histories, KYC status, and complaint details from the backend database.
 
 This dual approach allows "Aria" to provide comprehensive support by combining a stable repository of general knowledge with secure access to live, personal data.
-
-### Architecture Diagram Links
-
-For a more detailed view of our architecture, please refer to the following diagrams:
-
--   **System Architecture Diagram**: [Link to be provided]
--   **AI Agent Logic Flow Diagram**: [Link to be provided]
 
 ## 3. Implemented Banking Scenarios
 
@@ -365,11 +358,37 @@ As per the buildathon requirements, we have prepared over 20 detailed test scrip
 
 ---
 
-## 13. Scenario Demo Videos
+### 13\. Scenario Demo Videos
 
 To demonstrate the functionality of each scenario, we have prepared short video recordings.
 
-**Google Drive Link**: [Link]() 
+| SR.             | Scenario Description                                                                                                    | YouTube Demo Link                        |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| **Happy Paths** |                                                                                                                         |                                          |
+| 1               | "What is my account balance?"                                                                                           | [Link](https://www.google.com/search?q=) |
+| 2               | "Show me my last 5 transactions."                                                                                       | [Link](https://www.google.com/search?q=) |
+| 3               | "I lost my card, please block it."                                                                                      | [Link](https://www.google.com/search?q=) |
+| 4               | "Block my card ending in 4157."                                                                                         | [Link](https://www.google.com/search?q=) |
+| 5               | "I want to dispute a transaction of 500 rupees from yesterday."                                                         | [Link](https://www.google.com/search?q=) |
+| 6               | "I need to register a complaint."                                                                                       | [Link](https://www.google.com/search?q=) |
+| 7               | "What's the status of my ticket COMPLAINT69541?"                                                                        | [Link](https://www.google.com/search?q=) |
+| 8               | "Find the nearest branch in Address: 456, 5th Block, Koramangala, Bengaluru, Karnataka 560095 - IFSC Code: MAUR0000003" | [Link](https://www.google.com/search?q=) |
+| 9               | "Where is an ATM near pincode 560001?"                                                                                  | [Link](https://www.google.com/search?q=) |
+| 10              | "Can you check my KYC status?"                                                                                          | [Link](https://www.google.com/search?q=) |
+| 11              | "What is the status of cheque number 123456?"                                                                           | [Link](https://www.google.com/search?q=) |
+| 12              | "Tell me about the current fixed deposit interest rates."                                                               | [Link](https://www.google.com/search?q=) |
+| 13              | "I want to know my loan status, ID is LN77584."                                                                         | [Link](https://www.google.com/search?q=) |
+| **Edge Cases**  |                                                                                                                         |                                          |
+| 14              | "I want to speak to a human agent."                                                                                     | [Link](https://www.google.com/search?q=) |
+| 15              | "I have a card issue." (Ambiguous)                                                                                      | [Link](https://www.google.com/search?q=) |
+| 16              | "Mera balance batao." (Language Switch)                                                                                 | [Link](https://www.google.com/search?q=) |
+| 17              | "Branch in Mumbai" (Disambiguation)                                                                                     | [Link](https://www.google.com/search?q=) |
+| 18              | "Dispute for a transaction that doesn't exist."                                                                         | [Link](https://www.google.com/search?q=) |
+| 19              | (API timeout during balance check)                                                                                      | [Link](https://www.google.com/search?q=) |
+| 20              | "This is useless, get me a person." (Frustration)                                                                       | [Link](https://www.google.com/search?q=) |
+| 21              | "Check balance for account ABCDE." (Invalid Input)                                                                      | [Link](https://www.google.com/search?q=) |
+
+**Google Drive Link**: [](https://www.google.com/search?q=)
 
 ---
 
@@ -390,6 +409,8 @@ BankWise AI's "Aria" represents a comprehensive solution for inbound banking sup
 **Repository**: [https://github.com/codex-mohan/BankWise](https://bankwise-fekm.onrender.com/)
 **Live Demo**: [https://bankwise-fekm.onrender.com/](https://bankwise-fekm.onrender.com/)
 **Documentation**: [https://bankwise-fekm.onrender.com/docs](https://bankwise-fekm.onrender.com/docs)
+**Architecture Diagram of Agent**: [Google Drive Link](https://drive.google.com/file/d/1IAaK96J0UAWVZAFaAqrF5pwE7Cw3ZoKX/view?usp=sharing)
+\*\* \*\*: [Google Drive Link](https://drive.google.com/file/d/1og3MJLGJfv418kHd9q1fWbvKQl8cP7AQ/view?usp=sharing)
 
 ---
 
