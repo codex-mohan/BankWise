@@ -1,9 +1,9 @@
 [project]
-name = "nasscom"
+name = "BankWise"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Python API backend for Inbound Banking Support Agent by BankWise By AetherOps"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13.3"
 dependencies = [
     "aiohttp>=3.12.15",
     "asyncpg>=0.30.0",
