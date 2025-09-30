@@ -30,7 +30,7 @@ async def get_kyc_status(request: KYCStatusRequest):
                         account_number=f"******{request.account_number[-4:]}",
                         kyc_status=account["kyc_status"],
                         verification_level=account["kyc_level"],
-                        last_updated=account["last_updated"],
+                        last_updated=account["last_updated"].isoformat() if isinstance(account["last_updated"], datetime) else str(account["last_updated"]),
                         documents_required=[],
                         status=Status.SUCCESS,
                     )
@@ -50,7 +50,7 @@ async def get_kyc_status(request: KYCStatusRequest):
             account_number=f"******{request.account_number[-4:]}",
             kyc_status=account["kyc_status"],
             verification_level=account["kyc_level"],
-            last_updated=account["last_updated"],
+            last_updated=account["last_updated"].isoformat() if isinstance(account["last_updated"], datetime) else str(account["last_updated"]),
             documents_required=[],
             status=Status.SUCCESS,
         )

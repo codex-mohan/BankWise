@@ -373,9 +373,9 @@ To demonstrate the functionality of each scenario, we have prepared short video 
 | 6               | "I want to register a complaint regarding the mobile app's crashing issues."           | [Link](https://youtu.be/XBConQAAWxs)     |
 | 7               | "What's the status of my ticket COMPLAINT69541?"                                       | [Link](https://www.google.com/search?q=) |
 | 8               | "Find the nearest branch in bangalore"                                                 | [Link](https://youtu.be/_dW3W0RCBKs)     |
-| 9               | "Where is an ATM near pincode 429096?"                                                 | [Link](https://www.google.com/search?q=) |
+| 9               | "Where is an ATM near pincode 429096?"                                                 | [Link](https://youtu.be/qZmmcuvRSOo) |
 | 10              | "Can you check my KYC status?"                                                         | [Link](https://www.google.com/search?q=) |
-| 11              | "What is the status of cheque number 123456?"                                          | [Link](https://www.google.com/search?q=) |
+| 11              | "What is the status of cheque number 393742?"                                          | [Link](https://www.google.com/search?q=) |
 | 12              | "Tell me about the current fixed deposit interest rates."                              | [Link](https://www.google.com/search?q=) |
 | 13              | "I want to know my loan status, ID is LN77584."                                        | [Link](https://www.google.com/search?q=) |
 | **Edge Cases**  |                                                                                        |                                          |
