@@ -53,21 +53,19 @@ async def create_complaint(request: ComplaintRequest):
         priority = config["priority"]
         estimated_days = config["days"]
 
-        # Create a new complaint object
-        new_complaint = Complaint(
-            ticket_id=f"COMPLAINT{random.randint(10000, 99999)}",
-            account_number=request.account_number,
-            subject=request.subject,
-            description=request.description,
-            category=request.category,
-            status="OPEN",
-            priority=priority,
-            created_at=datetime.now().isoformat(),
-            estimated_resolution_days=estimated_days
-        )
+        # Create a new complaint data dict
+        complaint_data = {
+            "account_number": request.account_number,
+            "subject": request.subject,
+            "description": request.description,
+            "category": request.category,
+            "priority": priority,
+            "estimated_resolution_days": estimated_days
+        }
 
-        # Add to mock storage for future retrieval
-        mock_storage.complaints.append(new_complaint.dict())
+        # Add to mock storage using the proper method
+        new_complaint_dict = mock_storage.add_complaint(complaint_data)
+        new_complaint = Complaint(**new_complaint_dict)
 
         # Send SMS notification to customer
         if account.get("mobile_numbers") and sms_service.is_enabled():
@@ -126,11 +124,19 @@ async def update_complaint_status(request: ComplaintStatusRequest):
             logger.warning(f"Account not found: {complaint_data['account_number']}")
             raise HTTPException(status_code=404, detail="Account not found")
         
-        # Update complaint status
+        # Update complaint status using the proper update method
         original_status = complaint_data["status"]
-        complaint_data["status"] = "RESOLVED"
-        complaint_data["resolved_at"] = datetime.now().isoformat()
-        complaint_data["resolution_notes"] = "Complaint has been resolved successfully"
+        update_data = {
+            "status": "RESOLVED",
+            "resolved_at": datetime.now(),
+            "resolution_notes": "Complaint has been resolved successfully"
+        }
+        
+        # Update the complaint in storage
+        updated_complaint = mock_storage.update_complaint(request.ticket_id, update_data)
+        if not updated_complaint:
+            logger.error(f"Failed to update complaint with ticket ID: {request.ticket_id}")
+            raise HTTPException(status_code=500, detail="Failed to update complaint")
         
         # Send SMS notification if status changed to resolved
         if original_status != "RESOLVED" and account.get("mobile_numbers") and sms_service.is_enabled():
@@ -151,7 +157,7 @@ async def update_complaint_status(request: ComplaintStatusRequest):
             else:
                 logger.warning(f"Failed to send SMS notification for complaint resolution {request.ticket_id}")
         
-        complaint = Complaint(**complaint_data)
+        complaint = Complaint(**updated_complaint)
         response = ComplaintResponse(
             complaint=complaint,
             status=Status.SUCCESS,
@@ -180,7 +186,13 @@ async def get_complaint_status(request: ComplaintStatusRequest):
                     "SELECT * FROM complaints WHERE ticket_id = $1", request.ticket_id
                 )
                 if complaint_data:
-                    complaint = Complaint(**complaint_data)
+                    # Convert datetime fields to ISO format strings
+                    complaint_dict = dict(complaint_data)
+                    for field in ['created_at', 'resolved_at']:
+                        if field in complaint_dict and complaint_dict[field] is not None:
+                            if hasattr(complaint_dict[field], 'isoformat'):
+                                complaint_dict[field] = complaint_dict[field].isoformat()
+                    complaint = Complaint(**complaint_dict)
                     response = ComplaintResponse(
                         complaint=complaint,
                         status=Status.SUCCESS,

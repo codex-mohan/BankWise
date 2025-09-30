@@ -651,6 +651,20 @@ class MockDataStorage:
         self._save_json_file("complaints", self.complaints)
         return complaint_data
 
+    def update_complaint(self, ticket_id: str, update_data: Dict) -> Optional[Dict]:
+        """Update an existing complaint"""
+        for i, complaint in enumerate(self.complaints):
+            if complaint["ticket_id"] == ticket_id:
+                # Ensure datetime fields are properly formatted
+                if "resolved_at" in update_data and update_data["resolved_at"] is not None:
+                    if hasattr(update_data["resolved_at"], 'isoformat'):
+                        update_data["resolved_at"] = update_data["resolved_at"].isoformat()
+                
+                self.complaints[i].update(update_data)
+                self._save_json_file("complaints", self.complaints)
+                return self.complaints[i]
+        return None
+
     def add_dispute(self, dispute_data: Dict) -> Dict:
         """Add a new dispute"""
         dispute_data["ticket_id"] = f"DISPUTE{random.randint(10000, 99999)}"

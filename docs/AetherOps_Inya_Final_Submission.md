@@ -362,31 +362,31 @@ As per the buildathon requirements, we have prepared over 20 detailed test scrip
 
 To demonstrate the functionality of each scenario, we have prepared short video recordings.
 
-| SR.             | Scenario Description                                                                                                    | YouTube Demo Link                        |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| **Happy Paths** |                                                                                                                         |                                          |
-| 1               | "What is my account balance?"                                                                                           | [Link](https://www.google.com/search?q=) |
-| 2               | "Show me my last 5 transactions."                                                                                       | [Link](https://www.google.com/search?q=) |
-| 3               | "I lost my card, please block it."                                                                                      | [Link](https://www.google.com/search?q=) |
-| 4               | "Block my card ending in 4157."                                                                                         | [Link](https://www.google.com/search?q=) |
-| 5               | "I want to dispute a transaction of 500 rupees from yesterday."                                                         | [Link](https://www.google.com/search?q=) |
-| 6               | "I need to register a complaint."                                                                                       | [Link](https://www.google.com/search?q=) |
-| 7               | "What's the status of my ticket COMPLAINT69541?"                                                                        | [Link](https://www.google.com/search?q=) |
-| 8               | "Find the nearest branch in Address: 456, 5th Block, Koramangala, Bengaluru, Karnataka 560095 - IFSC Code: MAUR0000003" | [Link](https://www.google.com/search?q=) |
-| 9               | "Where is an ATM near pincode 560001?"                                                                                  | [Link](https://www.google.com/search?q=) |
-| 10              | "Can you check my KYC status?"                                                                                          | [Link](https://www.google.com/search?q=) |
-| 11              | "What is the status of cheque number 123456?"                                                                           | [Link](https://www.google.com/search?q=) |
-| 12              | "Tell me about the current fixed deposit interest rates."                                                               | [Link](https://www.google.com/search?q=) |
-| 13              | "I want to know my loan status, ID is LN77584."                                                                         | [Link](https://www.google.com/search?q=) |
-| **Edge Cases**  |                                                                                                                         |                                          |
-| 14              | "I want to speak to a human agent."                                                                                     | [Link](https://www.google.com/search?q=) |
-| 15              | "I have a card issue." (Ambiguous)                                                                                      | [Link](https://www.google.com/search?q=) |
-| 16              | "Mera balance batao." (Language Switch)                                                                                 | [Link](https://www.google.com/search?q=) |
-| 17              | "Branch in Mumbai" (Disambiguation)                                                                                     | [Link](https://www.google.com/search?q=) |
-| 18              | "Dispute for a transaction that doesn't exist."                                                                         | [Link](https://www.google.com/search?q=) |
-| 19              | (API timeout during balance check)                                                                                      | [Link](https://www.google.com/search?q=) |
-| 20              | "This is useless, get me a person." (Frustration)                                                                       | [Link](https://www.google.com/search?q=) |
-| 21              | "Check balance for account ABCDE." (Invalid Input)                                                                      | [Link](https://www.google.com/search?q=) |
+| SR.             | Scenario Description                                                                   | YouTube Demo Link                        |
+| --------------- | -------------------------------------------------------------------------------------- | ---------------------------------------- |
+| **Happy Paths** |                                                                                        |                                          |
+| 1               | "What is my account balance?"                                                          | [Link](https://youtu.be/5yVpCyzgQwE)     |
+| 2               | "Show me my last 5 transactions."                                                      | [Link](https://youtu.be/0NjQa58Hv00)     |
+| 3               | "I lost my card, please block it."                                                     | [Link](https://youtu.be/G4yhhR1tDPU)     |
+| 4               | "Block my card ending in 8491."                                                        | [Link](https://youtu.be/G4yhhR1tDPU)     |
+| 5               | "I want to dispute a transaction of 100 rupees to a fradulent online store yesterday." | [Link](https://youtu.be/fueIDX2gHnE)     |
+| 6               | "I want to register a complaint regarding the mobile app's crashing issues."           | [Link](https://youtu.be/XBConQAAWxs)     |
+| 7               | "What's the status of my ticket COMPLAINT69541?"                                       | [Link](https://www.google.com/search?q=) |
+| 8               | "Find the nearest branch in bangalore"                                                 | [Link](https://youtu.be/_dW3W0RCBKs)     |
+| 9               | "Where is an ATM near pincode 429096?"                                                 | [Link](https://www.google.com/search?q=) |
+| 10              | "Can you check my KYC status?"                                                         | [Link](https://www.google.com/search?q=) |
+| 11              | "What is the status of cheque number 123456?"                                          | [Link](https://www.google.com/search?q=) |
+| 12              | "Tell me about the current fixed deposit interest rates."                              | [Link](https://www.google.com/search?q=) |
+| 13              | "I want to know my loan status, ID is LN77584."                                        | [Link](https://www.google.com/search?q=) |
+| **Edge Cases**  |                                                                                        |                                          |
+| 14              | "I want to speak to a human agent."                                                    | [Link](https://www.google.com/search?q=) |
+| 15              | "I have a card issue." (Ambiguous)                                                     | [Link](https://www.google.com/search?q=) |
+| 16              | "Mera balance batao." (Language Switch)                                                | [Link](https://www.google.com/search?q=) |
+| 17              | "Branch in Mumbai" (Disambiguation)                                                    | [Link](https://www.google.com/search?q=) |
+| 18              | "Dispute for a transaction that doesn't exist."                                        | [Link](https://www.google.com/search?q=) |
+| 19              | (API timeout during balance check)                                                     | [Link](https://www.google.com/search?q=) |
+| 20              | "This is useless, get me a person." (Frustration)                                      | [Link](https://www.google.com/search?q=) |
+| 21              | "Check balance for account ABCDE." (Invalid Input)                                     | [Link](https://www.google.com/search?q=) |
 
 **Google Drive Link**: [](https://www.google.com/search?q=)
 
@@ -399,6 +399,10 @@ To demonstrate the functionality of each scenario, we have prepared short video 
 - **Agent Call Version** [link](https://app.inya.ai/demo/25a3c6ca-388f-4e32-bb84-57da53b4a972)
 
 #### Note: For the Bank Name give `Mauryan Bank` as the input value.
+
+## 15. Social Media Interactions
+
+- **LinkedIn Post:** [Link](https://www.linkedin.com/posts/codex-mohan_ai-banking-fintech-activity-7378826377535455232-K6yx)
 
 ---
 
