@@ -373,11 +373,11 @@ To demonstrate the functionality of each scenario, we have prepared short video 
 | 6               | "I want to register a complaint regarding the mobile app's crashing issues."           | [Link](https://youtu.be/XBConQAAWxs)     |
 | 7               | "What's the status of my ticket COMPLAINT69541?"                                       | [Link](https://www.google.com/search?q=) |
 | 8               | "Find the nearest branch in bangalore"                                                 | [Link](https://youtu.be/_dW3W0RCBKs)     |
-| 9               | "Where is an ATM near pincode 429096?"                                                 | [Link](https://youtu.be/qZmmcuvRSOo) |
+| 9               | "Where is an ATM near pincode 429096?"                                                 | [Link](https://youtu.be/qZmmcuvRSOo)     |
 | 10              | "Can you check my KYC status?"                                                         | [Link](https://www.google.com/search?q=) |
-| 11              | "What is the status of cheque number 393742?"                                          | [Link](https://www.google.com/search?q=) |
-| 12              | "Tell me about the current fixed deposit interest rates."                              | [Link](https://www.google.com/search?q=) |
-| 13              | "I want to know my loan status, ID is LN77584."                                        | [Link](https://www.google.com/search?q=) |
+| 11              | "What is the status of cheque number 393742?"                                          | [Link](https://youtu.be/zEQtHUGhMko)     |
+| 12              | "Tell me about the current fixed deposit interest rates."                              | [Link](https://youtu.be/z9UwC3UarWU)     |
+| 13              | "I want to know my loan status, ID is LN77584."                                        | [Link](https://youtu.be/wDvfWkXN-I4)     |
 | **Edge Cases**  |                                                                                        |                                          |
 | 14              | "I want to speak to a human agent."                                                    | [Link](https://www.google.com/search?q=) |
 | 15              | "I have a card issue." (Ambiguous)                                                     | [Link](https://www.google.com/search?q=) |
@@ -388,7 +388,7 @@ To demonstrate the functionality of each scenario, we have prepared short video 
 | 20              | "This is useless, get me a person." (Frustration)                                      | [Link](https://www.google.com/search?q=) |
 | 21              | "Check balance for account ABCDE." (Invalid Input)                                     | [Link](https://www.google.com/search?q=) |
 
-**Google Drive Link**: [](https://www.google.com/search?q=)
+**For all the Test case Scenarios check this Playlist Link**: [Link](https://www.youtube.com/playlist?list=PLkEGhqyjM49mF9Zd2iA235UXegDtLUzgr)
 
 ---
 
