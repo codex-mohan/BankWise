@@ -1,6 +1,6 @@
 version = 1
 revision = 1
-requires-python = ">=3.13"
+requires-python = ">=3.13.3"
 
 [[package]]
 name = "aiohappyeyeballs"
@@ -114,6 +114,41 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz", hash = "sha256:75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b", size = 812032 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/77/06/bb80f5f86020c4551da315d78b3ab75e8228f89f0162f2c3a819e407941a/attrs-25.3.0-py3-none-any.whl", hash = "sha256:427318ce031701fea540783410126f03899a97ffc6f61596ad581ac2e40e3bc3", size = 63815 },
+]
+
+[[package]]
+name = "bankwise"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "asyncpg" },
+    { name = "dotenv" },
+    { name = "faker" },
+    { name = "fastapi" },
+    { name = "httpx" },
+    { name = "jinja2" },
+    { name = "orjson" },
+    { name = "psycopg2-binary" },
+    { name = "requests" },
+    { name = "twilio" },
+    { name = "uvicorn" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "aiohttp", specifier = ">=3.12.15" },
+    { name = "asyncpg", specifier = ">=0.30.0" },
+    { name = "dotenv", specifier = ">=0.9.9" },
+    { name = "faker", specifier = ">=37.8.0" },
+    { name = "fastapi", specifier = ">=0.117.1" },
+    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "jinja2", specifier = ">=3.1.6" },
+    { name = "orjson", specifier = ">=3.11.3" },
+    { name = "psycopg2-binary", specifier = ">=2.9.10" },
+    { name = "requests", specifier = ">=2.32.5" },
+    { name = "twilio", specifier = ">=9.8.2" },
+    { name = "uvicorn", specifier = ">=0.36.0" },
 ]
 
 [[package]]
@@ -410,41 +445,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/b2/0a/2436550b1520091af0600dff547913cb2d66fbac27a8c33bc1b1bccd8d98/multidict-6.6.4-cp313-cp313t-win_amd64.whl", hash = "sha256:6d46a180acdf6e87cc41dc15d8f5c2986e1e8739dc25dbb7dac826731ef381a4", size = 53100 },
     { url = "https://files.pythonhosted.org/packages/97/ea/43ac51faff934086db9c072a94d327d71b7d8b40cd5dcb47311330929ef0/multidict-6.6.4-cp313-cp313t-win_arm64.whl", hash = "sha256:756989334015e3335d087a27331659820d53ba432befdef6a718398b0a8493ad", size = 45501 },
     { url = "https://files.pythonhosted.org/packages/fd/69/b547032297c7e63ba2af494edba695d781af8a0c6e89e4d06cf848b21d80/multidict-6.6.4-py3-none-any.whl", hash = "sha256:27d8f8e125c07cb954e54d75d04905a9bba8a439c1d84aca94949d4d03d8601c", size = 12313 },
-]
-
-[[package]]
-name = "nasscom"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "aiohttp" },
-    { name = "asyncpg" },
-    { name = "dotenv" },
-    { name = "faker" },
-    { name = "fastapi" },
-    { name = "httpx" },
-    { name = "jinja2" },
-    { name = "orjson" },
-    { name = "psycopg2-binary" },
-    { name = "requests" },
-    { name = "twilio" },
-    { name = "uvicorn" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "aiohttp", specifier = ">=3.12.15" },
-    { name = "asyncpg", specifier = ">=0.30.0" },
-    { name = "dotenv", specifier = ">=0.9.9" },
-    { name = "faker", specifier = ">=37.8.0" },
-    { name = "fastapi", specifier = ">=0.117.1" },
-    { name = "httpx", specifier = ">=0.28.1" },
-    { name = "jinja2", specifier = ">=3.1.6" },
-    { name = "orjson", specifier = ">=3.11.3" },
-    { name = "psycopg2-binary", specifier = ">=2.9.10" },
-    { name = "requests", specifier = ">=2.32.5" },
-    { name = "twilio", specifier = ">=9.8.2" },
-    { name = "uvicorn", specifier = ">=0.36.0" },
 ]
 
 [[package]]

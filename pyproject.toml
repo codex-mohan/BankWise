@@ -1,5 +1,5 @@
 [project]
-name = "BankWise"
+name = "bankwise"
 version = "0.1.0"
 description = "A Python API backend for Inbound Banking Support Agent by BankWise By AetherOps"
 readme = "README.md"
