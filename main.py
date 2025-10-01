@@ -122,6 +122,11 @@ async def root():
     return {"message": "BankWise AI Banking Support API is running", "version": "1.0.0"}
 
 
+@app.head("/")
+async def head_root():
+    return {"message": "service is up and running"}
+
+
 @app.get("/health")
 async def health_check():
     """Detailed health check"""
@@ -137,7 +142,22 @@ async def health_check():
 
 
 # Include all route modules
-from routes import account, card, dispute, complaint, branch, atm, kyc, cheque, fd, loan, escalation, chat, sms, dashboard
+from routes import (
+    account,
+    card,
+    dispute,
+    complaint,
+    branch,
+    atm,
+    kyc,
+    cheque,
+    fd,
+    loan,
+    escalation,
+    chat,
+    sms,
+    dashboard,
+)
 
 app.include_router(account.router)
 app.include_router(card.router)

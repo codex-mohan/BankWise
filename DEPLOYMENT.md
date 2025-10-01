@@ -64,8 +64,8 @@ LOG_LEVEL=INFO
 1. In the service configuration, go to "Environment"
 2. Add the following environment variables:
    ```
-   PYTHON_VERSION: "3.11"
-   PORT: "10000"
+   PYTHON_VERSION: "3.13.3"
+   PORT: "8000"
    ENVIRONMENT: "production"
    LOG_LEVEL: "INFO"
    DATABASE_URL: [Your Neon connection string]
