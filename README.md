@@ -82,6 +82,7 @@
 
 - **🤖 15+ Banking Scenarios**: Complete coverage of account, card, loan, FD and dispute management
 - **🧠 AI-Powered Processing**: NLU intent classification and persona-based response generation
+- **👥 Intelligent Agent Management**: Enhanced escalation system with Indian-named agents, intelligent specialization matching, and real-time availability tracking
 - **⚙️ Multi-Layer Architecture**: Clear separation of concerns across interface, application, business and data layers
 - **📊 Dual Data Sources**: Neon PostgreSQL with automatic fallback to JSON mock data
 - **🎭 Adaptive Responses**: Emotion-aware responses with Default, Empathetic, and Efficient personas
@@ -287,6 +288,8 @@ graph TD
 4.  **Render will automatically detect the `render.yaml` configuration and deploy the API.**
 5.  Your API will be live at the URL provided by Render! 🌐
 
+#### **Note:** For Detailed deployment instructions go to [DEPLOYMENT.md](./docs/DEPLOYMENT.md).
+
 ## 🛠️ API Endpoints Quick Reference
 
 <div align="center">
@@ -363,10 +366,30 @@ graph TD
       <td>Check loan status</td>
     </tr>
     <tr>
-      <td rowspan="2">🧑‍💼 Support</td>
+      <td rowspan="6">🧑‍💼 Support</td>
       <td><code>/api/escalate</code></td>
       <td>POST</td>
-      <td>Escalate to human agent</td>
+      <td>Escalate to human agent with intelligent matching</td>
+    </tr>
+    <tr>
+      <td><code>/api/agents/available</code></td>
+      <td>GET</td>
+      <td>Get list of available agents</td>
+    </tr>
+    <tr>
+      <td><code>/api/agents/statistics</code></td>
+      <td>GET</td>
+      <td>Get agent availability statistics</td>
+    </tr>
+    <tr>
+      <td><code>/api/agents/{agent_id}</code></td>
+      <td>GET</td>
+      <td>Get detailed agent information</td>
+    </tr>
+    <tr>
+      <td><code>/api/agents/{agent_id}/status</code></td>
+      <td>PUT</td>
+      <td>Update agent availability status</td>
     </tr>
     <tr>
       <td><code>/api/chat/intent</code></td>
@@ -393,7 +416,7 @@ graph TD
   </table>
 </div>
 
-For comprehensive usage examples, please see the **[API Examples documentation](API_EXAMPLES.md)**.
+For comprehensive usage examples, please see the **[API Examples documentation](./docs/API_EXAMPLES.md)**.
 
 ### 👨‍⚖️ Judge Dashboard
 

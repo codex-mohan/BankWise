@@ -290,10 +290,30 @@ class LoanStatusResponse(BaseModel):
     status: Status
 
 
+class AgentInfo(BaseModel):
+    agent_id: str
+    employee_id: str
+    full_name: str
+    department: str
+    specialization: str
+    languages_spoken: List[str]
+    years_experience: int
+    performance_rating: float
+    customer_satisfaction_rate: float
+    current_status: str
+    is_available: bool
+    next_available_time: Optional[str] = None
+    average_response_time: int
+    resolution_rate: float
+    escalation_level: str
+
+
 class EscalationResponse(BaseModel):
     escalation_id: str
-    agent_id: str
+    agent_info: AgentInfo
     estimated_wait_time: int
+    queue_position: Optional[int] = None
+    alternative_agents: Optional[List[AgentInfo]] = None
     status: Status
 
 

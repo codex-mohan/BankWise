@@ -237,13 +237,13 @@ curl -X POST "http://localhost:8000/api/branch/locate" \
 
 ## 🧑‍💼 Support Services
 
-### Escalate to Agent
+### Escalate to Agent (Enhanced with Intelligent Matching)
 
 ```bash
 curl -X POST "http://localhost:8000/api/escalate" \
      -H "Content-Type: application/json" \
      -d '{
-       "reason": "Complex transaction issue",
+       "reason": "I need to block my lost credit card immediately",
        "urgency": "high"
      }'
 ```
@@ -252,10 +252,145 @@ curl -X POST "http://localhost:8000/api/escalate" \
 
 ```json
 {
-  "escalation_id": "ESCALATION12345",
-  "agent_id": "AGENT789",
-  "estimated_wait_time": 15,
+  "escalation_id": "ESCALATION53590",
+  "agent_info": {
+    "agent_id": "AGENT6661",
+    "employee_id": "EMP94007",
+    "full_name": "Savita Agarwal",
+    "department": "Priority Banking",
+    "specialization": "International Banking",
+    "languages_spoken": ["English", "Hindi", "Urdu"],
+    "years_experience": 1,
+    "performance_rating": 4.1,
+    "customer_satisfaction_rate": 90.3,
+    "current_status": "On Break",
+    "is_available": false,
+    "next_available_time": "2025-10-02T16:09:57.722957",
+    "average_response_time": 68,
+    "resolution_rate": 91.7,
+    "escalation_level": "L2"
+  },
+  "estimated_wait_time": 1,
+  "queue_position": 2,
+  "alternative_agents": [],
   "status": "success"
+}
+```
+
+### Get Available Agents
+
+```bash
+curl -X GET "http://localhost:8000/api/agents/available?specialization=Card Issues&limit=5" \
+     -H "Content-Type: application/json"
+```
+
+**Response:**
+
+```json
+[
+  {
+    "agent_id": "AGENT7818",
+    "employee_id": "EMP53374",
+    "full_name": "Manish Joshi",
+    "department": "Account Services",
+    "specialization": "Account Queries",
+    "languages_spoken": ["English", "Hindi", "Telugu"],
+    "years_experience": 8,
+    "performance_rating": 4.9,
+    "customer_satisfaction_rate": 90.2,
+    "current_status": "Available",
+    "is_available": true,
+    "next_available_time": null,
+    "average_response_time": 36,
+    "resolution_rate": 91.2,
+    "escalation_level": "L2"
+  }
+]
+```
+
+### Get Agent Statistics
+
+```bash
+curl -X GET "http://localhost:8000/api/agents/statistics" \
+     -H "Content-Type: application/json"
+```
+
+**Response:**
+
+```json
+{
+  "total_agents": 25,
+  "available_agents": 7,
+  "availability_rate": 28.0,
+  "department_distribution": {
+    "Account Services": 3,
+    "Technical Support": 4,
+    "Loan Department": 4,
+    "Priority Banking": 5,
+    "Dispute Resolution": 3,
+    "Card Services": 1,
+    "Wealth Management": 1,
+    "NRI Services": 2,
+    "Customer Service": 2
+  },
+  "specialization_distribution": {
+    "Account Queries": 2,
+    "Loan Processing": 2,
+    "Technical Support": 2,
+    "Transaction Disputes": 5,
+    "Business Accounts": 3,
+    "KYC Verification": 2,
+    "Investment Services": 2,
+    "International Banking": 6,
+    "Card Issues": 1
+  }
+}
+```
+
+### Get Agent Details
+
+```bash
+curl -X GET "http://localhost:8000/api/agents/AGENT7818" \
+     -H "Content-Type: application/json"
+```
+
+**Response:**
+
+```json
+{
+  "agent_id": "AGENT7818",
+  "employee_id": "EMP53374",
+  "full_name": "Manish Joshi",
+  "department": "Account Services",
+  "specialization": "Account Queries",
+  "languages_spoken": ["English", "Hindi", "Telugu"],
+  "years_experience": 8,
+  "performance_rating": 4.9,
+  "customer_satisfaction_rate": 90.2,
+  "current_status": "Available",
+  "is_available": true,
+  "next_available_time": null,
+  "average_response_time": 36,
+  "resolution_rate": 91.2,
+  "escalation_level": "L2"
+}
+```
+
+### Update Agent Status
+
+```bash
+curl -X PUT "http://localhost:8000/api/agents/AGENT7818/status" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "status": "Busy"
+     }'
+```
+
+**Response:**
+
+```json
+{
+  "message": "Agent status updated to Busy"
 }
 
 ## 👨‍⚖️ Judge Dashboard

@@ -56,7 +56,7 @@ LOG_LEVEL=INFO
    - **Name**: `bankwise-ai-banking-api`
    - **Runtime**: Python
    - **Build Command**: `pip install -r requirements.txt` (or `uv pip install -r requirements.txt` if you use uv)
-   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port 10000`
+   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port 8000`
    - **Region**: Choose the same region as your Neon DB
 
 ### 2.2 Add Environment Variables
@@ -64,7 +64,7 @@ LOG_LEVEL=INFO
 1. In the service configuration, go to "Environment"
 2. Add the following environment variables:
    ```
-   PYTHON_VERSION: "3.13.3"
+   PYTHON_VERSION: "3.13"
    PORT: "8000"
    ENVIRONMENT: "production"
    LOG_LEVEL: "INFO"
@@ -95,12 +95,12 @@ LOG_LEVEL=INFO
 
 1. Click "Save and Deploy"
 2. Wait for the deployment to complete (this may take 5-10 minutes)
-3. Once deployed, you'll get a URL like `https://bankwise-ai-banking-api.onrender.com`
+3. Once deployed, you'll get a URL like `https://bankwise-fekm.onrender.com`
 
 ### 3.2 Test the API
 
-1. Access the API documentation at: `https://bankwise-ai-banking-api.onrender.com/docs`
-2. Test the health endpoint: `https://bankwise-ai-banking-api.onrender.com/health`
+1. Access the API documentation at: `https://bankwise-fekm.onrender.com/docs`
+2. Test the health endpoint: `https://bankwise-fekm.onrender.com/health`
 3. Test a sample API endpoint like balance check
 
 ### 3.3 Verify Database Integration

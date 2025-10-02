@@ -285,3 +285,24 @@ DETAIL:  Key (ifsc)=(BARB8277) already exists.
 2025-09-30 18:11:29,296 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
 2025-09-30 18:11:29,297 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
 2025-09-30 18:11:29,297 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-02 16:53:14,763 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-02 16:53:14,774 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-02 16:53:14,801 - main - INFO - Starting BankWise AI Banking Support API
+2025-10-02 16:53:19,809 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-02 16:53:25,207 - database - INFO - All tables contain data. Skipping population.
+2025-10-02 16:53:25,516 - main - INFO - Database initialized successfully
+2025-10-02 16:54:01,125 - routes.escalation - INFO - Escalation request received - Reason: I have an issue with my card, Urgency: medium
+2025-10-02 16:54:01,126 - routes.escalation - INFO - Escalation queued with agent Savita Agarwal, wait time: 1 minutes
+2025-10-02 16:54:10,241 - routes.escalation - INFO - Escalation request received - Reason: I have an issue with my card, Urgency: medium
+2025-10-02 16:54:10,241 - routes.escalation - INFO - Escalation queued with agent Savita Agarwal, wait time: 1 minutes
+2025-10-02 16:55:02,534 - routes.escalation - INFO - Retrieved 7 available agents for specialization: None
+2025-10-02 17:00:15,005 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-02 17:00:15,012 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-02 17:00:15,038 - main - INFO - Starting BankWise AI Banking Support API
+2025-10-02 17:00:22,617 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-02 17:00:26,611 - database - INFO - All tables contain data. Skipping population.
+2025-10-02 17:00:26,712 - main - INFO - Database initialized successfully
+2025-10-02 17:00:35,492 - routes.escalation - INFO - Retrieved agent statistics
+2025-10-02 17:01:26,505 - routes.escalation - INFO - Retrieved agent statistics
+2025-10-02 17:01:39,233 - routes.escalation - INFO - Escalation request received - Reason: I need to block my lost credit card immediately, Urgency: high
+2025-10-02 17:01:39,233 - routes.escalation - INFO - Escalation queued with agent Savita Agarwal, wait time: 1 minutes

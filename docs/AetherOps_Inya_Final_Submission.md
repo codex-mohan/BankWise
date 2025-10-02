@@ -371,10 +371,10 @@ To demonstrate the functionality of each scenario, we have prepared short video 
 | 4               | "Block my card ending in 8491."                                                        | [Link](https://youtu.be/G4yhhR1tDPU)     |
 | 5               | "I want to dispute a transaction of 100 rupees to a fradulent online store yesterday." | [Link](https://youtu.be/fueIDX2gHnE)     |
 | 6               | "I want to register a complaint regarding the mobile app's crashing issues."           | [Link](https://youtu.be/XBConQAAWxs)     |
-| 7               | "What's the status of my ticket COMPLAINT69541?"                                       | [Link](https://www.google.com/search?q=) |
+| 7               | "What's the status of my ticket COMPLAINT69541?"                                       | [Link](https://youtu.be/_Gpjbke54Rk) |
 | 8               | "Find the nearest branch in bangalore"                                                 | [Link](https://youtu.be/_dW3W0RCBKs)     |
 | 9               | "Where is an ATM near pincode 429096?"                                                 | [Link](https://youtu.be/qZmmcuvRSOo)     |
-| 10              | "Can you check my KYC status?"                                                         | [Link](https://www.google.com/search?q=) |
+| 10              | "Can you check my KYC status?"                                                         | [Link](https://youtu.be/OynHTGR9rbU) |
 | 11              | "What is the status of cheque number 393742?"                                          | [Link](https://youtu.be/zEQtHUGhMko)     |
 | 12              | "Tell me about the current fixed deposit interest rates."                              | [Link](https://youtu.be/z9UwC3UarWU)     |
 | 13              | "I want to know my loan status, ID is LN77584."                                        | [Link](https://youtu.be/wDvfWkXN-I4)     |
