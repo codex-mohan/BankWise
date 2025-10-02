@@ -641,6 +641,13 @@ class MockDataStorage:
                 return cheque
         return None
 
+    def get_transaction_by_id(self, transaction_id: str) -> Optional[Dict]:
+        """Get transaction by transaction ID"""
+        for transaction in self.transactions:
+            if transaction["id"] == transaction_id:
+                return transaction
+        return None
+
     def add_complaint(self, complaint_data: Dict) -> Dict:
         """Add a new complaint"""
         complaint_data["ticket_id"] = f"COMPLAINT{random.randint(10000, 99999)}"

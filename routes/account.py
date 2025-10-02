@@ -10,9 +10,11 @@ from database import db_manager
 from models import (
     AccountInfoRequest,
     TransactionHistoryRequest,
+    TransactionRequest,
     BalanceResponse,
     Transaction,
     TransactionHistoryResponse,
+    TransactionResponse,
     Status,
 )
 
@@ -165,5 +167,75 @@ async def get_transaction_history(request: TransactionHistoryRequest, auth: bool
     except Exception as e:
         logger.error(
             f"Error getting transaction history for account {request.account_number}: {str(e)}"
+        )
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.post("/transaction", response_model=TransactionResponse)
+async def get_transaction_details(request: TransactionRequest, auth: bool = Depends(verify_api_token)):
+    """Get detailed information about a specific transaction"""
+    try:
+        logger.info(f"Transaction details request for transaction ID: {request.transaction_id}")
+
+        # Try to get from database first
+        async with db_manager.get_connection() as conn:
+            if conn:
+                tx_record = await conn.fetchrow(
+                    "SELECT * FROM transactions WHERE transaction_id = $1",
+                    request.transaction_id,
+                )
+
+                if tx_record:
+                    response = TransactionResponse(
+                        transaction_id=tx_record["transaction_id"],
+                        account_number=f"******{tx_record['account_number'][-4:]}",
+                        transaction_date=tx_record["transaction_date"].isoformat(),
+                        description=tx_record["description"],
+                        amount=float(tx_record["amount"]),
+                        type=tx_record["type"],
+                        balance_after=float(tx_record["balance_after"]),
+                        status=tx_record.get("status", "COMPLETED"),
+                        reference_id=tx_record.get("reference_id"),
+                        merchant_id=tx_record.get("merchant_id"),
+                        location=tx_record.get("location"),
+                        status_response=Status.SUCCESS,
+                    )
+
+                    logger.info(
+                        f"Transaction details retrieved from database for transaction: {request.transaction_id}"
+                    )
+                    return response
+
+        # Fallback to mock data
+        transaction = mock_storage.get_transaction_by_id(request.transaction_id)
+        if not transaction:
+            logger.warning(f"Transaction not found: {request.transaction_id}")
+            raise HTTPException(status_code=404, detail="Transaction not found")
+
+        response = TransactionResponse(
+            transaction_id=transaction["id"],
+            account_number=f"******{transaction['account_number'][-4:]}",
+            transaction_date=transaction["transaction_date"],
+            description=transaction["description"],
+            amount=transaction["amount"],
+            type=transaction["type"],
+            balance_after=transaction["balance_after"],
+            status=transaction.get("status", "COMPLETED"),
+            reference_id=transaction.get("reference_id"),
+            merchant_id=transaction.get("merchant_id"),
+            location=transaction.get("location"),
+            status_response=Status.SUCCESS,
+        )
+
+        logger.info(
+            f"Transaction details retrieved from mock data for transaction: {request.transaction_id}"
+        )
+        return response
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(
+            f"Error getting transaction details for transaction {request.transaction_id}: {str(e)}"
         )
         raise HTTPException(status_code=500, detail="Internal server error")

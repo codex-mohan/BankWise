@@ -80,7 +80,7 @@
 
 ## ✨ Enhanced Features
 
-- **🤖 15+ Banking Scenarios**: Complete coverage of account, card, loan, FD and dispute management
+- **🤖 16+ Banking Scenarios**: Complete coverage of account, card, loan, FD and dispute management
 - **🧠 AI-Powered Processing**: NLU intent classification and persona-based response generation
 - **👥 Intelligent Agent Management**: Enhanced escalation system with Indian-named agents, intelligent specialization matching, and real-time availability tracking
 - **⚙️ Multi-Layer Architecture**: Clear separation of concerns across interface, application, business and data layers
@@ -98,6 +98,7 @@ BankWise features Aria, our intelligent banking assistant that provides:
 
 - **Persona-Based Interactions**: Adapts tone based on user emotion (Default, Empathetic, Efficient)
 - **Context-Aware Conversations**: Maintains session context across multiple interactions
+- **🔍 Transaction Verification**: Detailed transaction lookup with complete information
 - **Smart Escalation**: Seamless handoff to human agents when needed
 - **Proactive Assistance**: Anticipates user needs with relevant suggestions
 

@@ -139,6 +139,10 @@ class LoanStatusRequest(BaseModel):
     loan_id: str
 
 
+class TransactionRequest(BaseModel):
+    transaction_id: str
+
+
 class SpeakToAgentRequest(BaseModel):
     reason: Optional[str] = None
     urgency: str = "medium"
@@ -288,6 +292,21 @@ class LoanStatusResponse(BaseModel):
     loan_info: LoanInfo
     next_payment_date: str
     status: Status
+
+
+class TransactionResponse(BaseModel):
+    transaction_id: str
+    account_number: str
+    transaction_date: str
+    description: str
+    amount: float
+    type: str
+    balance_after: float
+    status: str
+    reference_id: Optional[str] = None
+    merchant_id: Optional[str] = None
+    location: Optional[str] = None
+    status_response: Status
 
 
 class AgentInfo(BaseModel):

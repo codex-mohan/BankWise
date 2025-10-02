@@ -291,7 +291,7 @@
     "24x7": "YES",
     "facilities": "CARD_RENEWAL",
     "last_maintenance": "2025-09-02T20:46:59.185845",
-    "status": "OUT_OF_SERVICE"
+    "status": "ACTIVE"
   },
   {
     "id": "ATM29968",
@@ -305,7 +305,7 @@
     "24x7": "NO",
     "facilities": "CASH_WITHDRAWAL",
     "last_maintenance": "2025-09-03T20:46:59.185856",
-    "status": "MAINTENANCE"
+    "status": "ACTIVE"
   },
   {
     "id": "ATM12217",
@@ -319,7 +319,7 @@
     "24x7": "YES",
     "facilities": "CARD_RENEWAL",
     "last_maintenance": "2025-09-21T20:46:59.185868",
-    "status": "OUT_OF_SERVICE"
+    "status": "ACTIVE"
   },
   {
     "id": "ATM70060",
@@ -333,7 +333,7 @@
     "24x7": "NO",
     "facilities": "CASH_DEPOSIT",
     "last_maintenance": "2025-09-03T20:46:59.185879",
-    "status": "OUT_OF_SERVICE"
+    "status": "ACTIVE"
   },
   {
     "id": "ATM68661",
@@ -347,7 +347,7 @@
     "24x7": "YES",
     "facilities": "BALANCE_ENQUIRY",
     "last_maintenance": "2025-08-29T20:46:59.185893",
-    "status": "OUT_OF_SERVICE"
+    "status": "ACTIVE"
   },
   {
     "id": "ATM75380",

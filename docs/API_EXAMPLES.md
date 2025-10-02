@@ -57,6 +57,35 @@ curl -X POST "http://localhost:8000/api/account/transactions" \
 }
 ```
 
+### Get Transaction Details
+
+```bash
+curl -X POST "http://localhost:8000/api/account/transaction" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "transaction_id": "TXN1234567"
+     }'
+```
+
+**Response:**
+
+```json
+{
+  "transaction_id": "TXN1234567",
+  "account_number": "******9012",
+  "transaction_date": "2025-09-20T10:30:00+05:30",
+  "description": "Purchase at Amazon",
+  "amount": 1250.0,
+  "type": "PURCHASE",
+  "balance_after": 14180.55,
+  "status": "COMPLETED",
+  "reference_id": "REF12345",
+  "merchant_id": "Amazon",
+  "location": "Mumbai",
+  "status_response": "success"
+}
+```
+
 ## 💳 Card Services
 
 ### Block a Card

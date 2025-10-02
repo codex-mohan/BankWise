@@ -306,3 +306,21 @@ DETAIL:  Key (ifsc)=(BARB8277) already exists.
 2025-10-02 17:01:26,505 - routes.escalation - INFO - Retrieved agent statistics
 2025-10-02 17:01:39,233 - routes.escalation - INFO - Escalation request received - Reason: I need to block my lost credit card immediately, Urgency: high
 2025-10-02 17:01:39,233 - routes.escalation - INFO - Escalation queued with agent Savita Agarwal, wait time: 1 minutes
+2025-10-02 20:01:09,997 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-02 20:01:10,004 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-02 20:01:10,029 - main - INFO - Starting BankWise AI Banking Support API
+2025-10-02 20:01:12,005 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-02 20:01:14,019 - database - INFO - All tables contain data. Skipping population.
+2025-10-02 20:01:14,147 - main - INFO - Database initialized successfully
+2025-10-02 20:03:37,267 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-02 20:03:37,274 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-02 20:03:37,296 - main - INFO - Starting BankWise AI Banking Support API
+2025-10-02 20:03:38,722 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-02 20:03:40,786 - database - INFO - All tables contain data. Skipping population.
+2025-10-02 20:03:40,896 - main - INFO - Database initialized successfully
+2025-10-02 20:05:39,162 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-02 20:05:39,170 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-02 20:05:39,196 - main - INFO - Starting BankWise AI Banking Support API
+2025-10-02 20:05:41,216 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-02 20:05:44,503 - database - INFO - All tables contain data. Skipping population.
+2025-10-02 20:05:44,623 - main - INFO - Database initialized successfully
