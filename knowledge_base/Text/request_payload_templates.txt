@@ -290,7 +290,7 @@ This action helps customers find ATMs in a specific pincode.
     "address": "74, Khurana Circle",
     "city": "Mumbai",
     "pincode": "153328",
-    "bank_name": "Bank of Baroda"
+    "bank_name": "Mauryan Bank"
   }
 ]
 ````

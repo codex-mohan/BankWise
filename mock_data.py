@@ -182,46 +182,59 @@ class MockDataGenerator:
             "Ahmedabad",
             "Jaipur",
             "Lucknow",
+            "Surat",
+            "Kanpur",
+            "Nagpur",
+            "Indore",
+            "Thane",
+            "Bhopal",
+            "Visakhapatnam",
+            "Patna",
+            "Vadodara",
+            "Ghaziabad",
+            "Ludhiana",
+            "Agra",
+            "Nashik",
+            "Faridabad",
+            "Meerut",
+            "Rajkot",
+            "Varanasi",
+            "Srinagar",
+            "Coimbatore",
+            "Jabalpur"
         ]
 
-        for city in cities:
-            for i in range(random.randint(2, 5)):
-                branch = {
-                    "name": f"BOB {city} {random.choice(['Main', 'Branch', 'Road', 'Center'])}",
-                    "address": fake.street_address(),
-                    "city": city,
-                    "pincode": f"{random.randint(110000, 500000)}",
-                    "ifsc": f"BARB{random.randint(1000, 9999)}",
-                    "latitude": random.uniform(18, 28),
-                    "longitude": random.uniform(72, 88),
-                    "phone": f"{random.randint(2000, 9999)}{random.randint(100000, 999999)}",
-                    "email": f"branch{random.randint(100, 999)}@bob.com",
-                    "working_hours": "9:30 AM - 4:30 PM",
-                    "branch_type": random.choice(
-                        ["FULL_SERVICE", "ATM_ONLY", "BUSINESS_CENTER"]
-                    ),
-                    "facilities": random.choice(
-                        ["ATM", "LOCKER", "FOREX", "NET_BANKING", "MOBILE_BANKING"]
-                    ),
-                    "manager_name": fake.name(),
-                    "established_date": (
-                        datetime.now() - timedelta(days=random.randint(3650, 18250))
-                    ).isoformat(),
-                }
-                branches.append(branch)
+        # Generate maximum 30 branches total
+        for i, city in enumerate(cities[:30]):
+            branch = {
+                "name": f"Mauryan Bank {city} {random.choice(['Main', 'Branch', 'Road', 'Center'])}",
+                "address": fake.street_address(),
+                "city": city,
+                "pincode": f"{random.randint(110000, 800000)}",
+                "ifsc": f"MAURY{random.randint(1000, 9999)}",
+                "latitude": random.uniform(8, 37),  # Expanded to cover all of India
+                "longitude": random.uniform(68, 97),  # Expanded to cover all of India
+                "phone": f"{random.randint(2000, 9999)}{random.randint(100000, 999999)}",
+                "email": f"branch{random.randint(100, 999)}@mauryanbank.com",
+                "working_hours": "9:30 AM - 4:30 PM",
+                "branch_type": random.choice(
+                    ["FULL_SERVICE", "BUSINESS_CENTER", "CORPORATE", "RURAL"]
+                ),
+                "facilities": random.choice(
+                    ["LOCKER", "FOREX", "NET_BANKING", "MOBILE_BANKING", "LOAN_SERVICES", "DEMAT_SERVICES"]
+                ),
+                "manager_name": fake.name(),
+                "established_date": (
+                    datetime.now() - timedelta(days=random.randint(3650, 18250))
+                ).isoformat(),
+            }
+            branches.append(branch)
 
         return branches
 
     def _generate_atms(self) -> List[Dict]:
         """Generate mock ATM data"""
         atms = []
-        banks = [
-            "Bank of Baroda",
-            "State Bank of India",
-            "HDFC Bank",
-            "ICICI Bank",
-            "Punjab National Bank",
-        ]
         cities = [
             "Mumbai",
             "Delhi",
@@ -233,20 +246,52 @@ class MockDataGenerator:
             "Ahmedabad",
             "Jaipur",
             "Lucknow",
+            "Surat",
+            "Kanpur",
+            "Nagpur",
+            "Indore",
+            "Thane",
+            "Bhopal",
+            "Visakhapatnam",
+            "Pimpri-Chinchwad",
+            "Patna",
+            "Vadodara",
+            "Ghaziabad",
+            "Ludhiana",
+            "Agra",
+            "Nashik",
+            "Faridabad",
+            "Meerut",
+            "Rajkot",
+            "Kalyan-Dombivali",
+            "Vasai-Virar",
+            "Varanasi",
+            "Srinagar",
+            "Dhanbad",
+            "Jodhpur",
+            "Amritsar",
+            "Raipur",
+            "Allahabad",
+            "Coimbatore",
+            "Jabalpur",
+            "Gwalior",
+            "Vijayawada",
+            "Madurai",
+            "Guwahati"
         ]
 
         for city in cities:
-            for i in range(random.randint(5, 15)):
+            for i in range(random.randint(3, 8)):
                 atm = {
                     "id": f"ATM{random.randint(10000, 99999)}",
                     "address": fake.street_address(),
                     "city": city,
-                    "pincode": f"{random.randint(110000, 500000)}",
-                    "bank_name": random.choice(banks),
-                    "latitude": random.uniform(18, 28),
-                    "longitude": random.uniform(72, 88),
+                    "pincode": f"{random.randint(110000, 800000)}",
+                    "bank_name": "Mauryan Bank",
+                    "latitude": random.uniform(8, 37),  # Expanded to cover all of India
+                    "longitude": random.uniform(68, 97),  # Expanded to cover all of India
                     "type": random.choice(["ON_SITE", "OFF_SITE"]),
-                    "24x7": random.choice(["YES", "NO"]),
+                    "24x7": random.choice(["YES", "YES", "YES", "NO"]),  # 75% chance of 24x7
                     "facilities": random.choice(
                         [
                             "CASH_DEPOSIT",
@@ -260,7 +305,7 @@ class MockDataGenerator:
                         datetime.now() - timedelta(days=random.randint(1, 90))
                     ).isoformat(),
                     "status": random.choice(
-                        ["ACTIVE", "OUT_OF_SERVICE", "MAINTENANCE"]
+                        ["ACTIVE", "ACTIVE", "ACTIVE", "ACTIVE", "OUT_OF_SERVICE", "MAINTENANCE"]  # 67% chance of ACTIVE
                     ),
                 }
                 atms.append(atm)

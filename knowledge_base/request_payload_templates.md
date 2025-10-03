@@ -290,7 +290,7 @@ This action helps customers find ATMs in a specific pincode.
     "address": "74, Khurana Circle",
     "city": "Mumbai",
     "pincode": "153328",
-    "bank_name": "Bank of Baroda"
+    "bank_name": "Mauryan Bank"
   }
 ]
 ````
@@ -366,6 +366,7 @@ This action retrieves the current interest rates for fixed deposits. You can ret
 To retrieve all available FD rates, send an empty request body.
 
 #### Request Example
+
 ```json
 {}
 ```
@@ -375,6 +376,7 @@ To retrieve all available FD rates, send an empty request body.
 To retrieve FD rates for a specific tenure.
 
 #### Request Payload Template
+
 ```json
 { "tenure": "{{tenure}}", "amount": "{{amount}}" }
 ```
@@ -383,6 +385,7 @@ To retrieve FD rates for a specific tenure.
 - `amount` (optional): The amount for the fixed deposit.
 
 #### Request Example
+
 ```json
 { "tenure": "7" }
 ```
@@ -393,16 +396,16 @@ The response format is the same for all `Get FD Rates` requests. The example bel
 
 ```json
 [
-    {
-        "tenure": 7,
-        "rate": 7.31,
-        "customer_type": "NORMAL"
-    },
-    {
-        "tenure": 7,
-        "rate": 5.94,
-        "customer_type": "SENIOR_CITIZEN"
-    }
+  {
+    "tenure": 7,
+    "rate": 7.31,
+    "customer_type": "NORMAL"
+  },
+  {
+    "tenure": 7,
+    "rate": 5.94,
+    "customer_type": "SENIOR_CITIZEN"
+  }
 ]
 ```
 
@@ -415,8 +418,8 @@ This action allows a customer to check the status of their loan application.
 `POST /api/loan/status`
 
 ```json
-{"loan_id": "{{loan_id}}"}
-````
+{ "loan_id": "{{loan_id}}" }
+```
 
 - `loan_id`: The ID of the loan to check.
 
@@ -453,7 +456,10 @@ This action allows a customer to escalate their issue to a human agent with inte
 ### Request Example
 
 ```json
-{ "reason": "I need to block my lost credit card immediately", "urgency": "high" }
+{
+  "reason": "I need to block my lost credit card immediately",
+  "urgency": "high"
+}
 ```
 
 ### Response Example
