@@ -7,6 +7,7 @@
     <title>BankWise Data Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --github-blue: #0969da;
@@ -64,21 +65,75 @@
         }
 
         .data-item {
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-bottom: 1px solid var(--github-border);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .data-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
 
         .data-item:hover {
-            background-color: var(--github-blue);
-            color: white;
+            background: linear-gradient(90deg, rgba(9, 105, 218, 0.1), rgba(130, 80, 223, 0.05));
+            color: var(--github-blue);
+            transform: translateX(3px);
+        }
+
+        .data-item:hover::before {
+            transform: translateX(0);
+        }
+
+        .data-item:hover i {
+            transform: scale(1.1);
+            color: var(--github-blue);
         }
 
         .data-item.active {
-            background-color: var(--github-blue);
+            background: linear-gradient(90deg, var(--github-blue), var(--github-purple));
             color: white;
-            font-weight: bold;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(9, 105, 218, 0.3);
+        }
+
+        .data-item.active::before {
+            transform: translateX(0);
+            background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
+        }
+
+        .data-item.active i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .data-item i {
+            transition: all 0.3s ease;
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* Dark theme adjustments for sidebar */
+        [data-bs-theme="dark"] .data-item:hover {
+            background: linear-gradient(90deg, rgba(88, 166, 255, 0.1), rgba(210, 168, 255, 0.05));
+            color: #58a6ff;
+        }
+
+        [data-bs-theme="dark"] .data-item.active {
+            background: linear-gradient(90deg, #58a6ff, #d2a8ff);
         }
 
         .table-container {
@@ -178,6 +233,634 @@
             border-radius: 0;
             margin-bottom: 20px;
         }
+
+        /* Agent Cards Styling */
+        .agents-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .agent-card {
+            background: var(--github-badge-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--github-blue);
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--github-blue), var(--github-purple), var(--github-green));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agent-avatar::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .agent-info h5 {
+            margin: 0;
+            color: var(--github-text);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .agent-info p {
+            margin: 5px 0 0;
+            color: var(--github-text);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .agent-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .status-available {
+            background: linear-gradient(135deg, var(--github-green), #2ea043);
+            color: white;
+        }
+
+        .status-busy {
+            background: linear-gradient(135deg, var(--github-orange), #e36209);
+            color: white;
+        }
+
+        .status-break {
+            background: linear-gradient(135deg, var(--github-purple), #8957e5);
+            color: white;
+        }
+
+        .status-training {
+            background: linear-gradient(135deg, var(--github-blue), #0969da);
+            color: white;
+        }
+
+        .status-off {
+            background: linear-gradient(135deg, var(--github-red), #cf222e);
+            color: white;
+        }
+
+        .agent-details {
+            margin-top: 15px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .detail-label {
+            color: var(--github-text);
+            opacity: 0.6;
+        }
+
+        .detail-value {
+            color: var(--github-text);
+            font-weight: 500;
+        }
+
+        .agent-skills {
+            margin-top: 15px;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: rgba(9, 105, 218, 0.1);
+            color: var(--github-blue);
+            border: 1px solid rgba(9, 105, 218, 0.2);
+            border-radius: 12px;
+            font-size: 11px;
+            margin: 2px;
+            transition: all 0.2s;
+        }
+
+        .skill-badge:hover {
+            background: rgba(9, 105, 218, 0.2);
+            transform: scale(1.05);
+        }
+
+        .agent-metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--github-border);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--github-blue);
+        }
+
+        .metric-label {
+            font-size: 11px;
+            color: var(--github-text);
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+
+        /* Dark theme adjustments for agent cards */
+        [data-bs-theme="dark"] .agent-card {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-bs-theme="dark"] .agent-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        [data-bs-theme="dark"] .skill-badge {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--github-blue);
+            border-color: rgba(88, 166, 255, 0.2);
+        }
+
+        [data-bs-theme="dark"] .skill-badge:hover {
+            background: rgba(88, 166, 255, 0.2);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .agents-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .agent-card {
+                padding: 15px;
+            }
+            
+            .agent-avatar {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* Home Dashboard Styles */
+        .home-dashboard {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--github-badge-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--github-blue), var(--github-purple));
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--github-text);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--github-text);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .stat-change {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .stat-change.positive {
+            background: rgba(26, 127, 55, 0.1);
+            color: var(--github-green);
+        }
+
+        .stat-change.negative {
+            background: rgba(207, 34, 46, 0.1);
+            color: var(--github-red);
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: var(--github-badge-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 20px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--github-text);
+        }
+
+        .chart-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chart-option {
+            padding: 4px 8px;
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            background: transparent;
+            color: var(--github-text);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chart-option:hover,
+        .chart-option.active {
+            background: var(--github-blue);
+            color: white;
+            border-color: var(--github-blue);
+        }
+
+        .chart-container {
+            flex: 1;
+            position: relative;
+            min-height: 0;
+        }
+
+        .chart-container canvas {
+            max-height: 250px !important;
+        }
+
+        .activity-feed {
+            background: var(--github-badge-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: start;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 500;
+            color: var(--github-text);
+            margin-bottom: 4px;
+        }
+
+        .activity-description {
+            color: var(--github-text);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .activity-time {
+            color: var(--github-text);
+            opacity: 0.5;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .action-card {
+            background: var(--github-badge-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--github-blue);
+        }
+
+        .action-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--github-blue), var(--github-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin: 0 auto 15px;
+        }
+
+        .action-title {
+            font-weight: 600;
+            color: var(--github-text);
+            margin-bottom: 5px;
+        }
+
+        .action-description {
+            color: var(--github-text);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Search Feature Styles */
+        .search-container {
+            background: var(--github-badge-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .search-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .search-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--github-text);
+        }
+
+        .search-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input-group {
+            position: relative;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border: 1px solid var(--github-border);
+            border-radius: 8px;
+            background: var(--github-bg);
+            color: var(--github-text);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--github-blue);
+            box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--github-text);
+            opacity: 0.5;
+        }
+
+        .search-filter {
+            padding: 8px 12px;
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            background: var(--github-bg);
+            color: var(--github-text);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .search-filter:focus {
+            outline: none;
+            border-color: var(--github-blue);
+        }
+
+        .search-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--github-border);
+        }
+
+        .search-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--github-text);
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .search-stat-icon {
+            color: var(--github-blue);
+        }
+
+        .search-highlight {
+            background-color: rgba(9, 105, 218, 0.2);
+            color: var(--github-blue);
+            padding: 1px 2px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--github-text);
+            opacity: 0.7;
+        }
+
+        .no-results-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        /* Dark theme adjustments for home dashboard */
+        [data-bs-theme="dark"] .stat-card,
+        [data-bs-theme="dark"] .chart-card,
+        [data-bs-theme="dark"] .activity-feed,
+        [data-bs-theme="dark"] .action-card,
+        [data-bs-theme="dark"] .search-container {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-bs-theme="dark"] .stat-card:hover,
+        [data-bs-theme="dark"] .chart-card:hover,
+        [data-bs-theme="dark"] .action-card:hover,
+        [data-bs-theme="dark"] .search-container:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -191,64 +874,311 @@
         </div>
         
         <div class="data-list">
-            <div class="data-item active" data-type="accounts">Accounts</div>
-            <div class="data-item" data-type="transactions">Transactions</div>
-            <div class="data-item" data-type="branches">Branches</div>
-            <div class="data-item" data-type="atms">ATMs</div>
-            <div class="data-item" data-type="complaints">Complaints</div>
-            <div class="data-item" data-type="disputes">Disputes</div>
-            <div class="data-item" data-type="loans">Loans</div>
-            <div class="data-item" data-type="fd_rates">FD Rates</div>
-            <div class="data-item" data-type="cards">Cards</div>
-            <div class="data-item" data-type="cheques">Cheques</div>
+            <div class="data-item active" data-type="home">
+                <i class="fas fa-home me-2"></i>Dashboard Home
+            </div>
+            <div class="data-item" data-type="accounts">
+                <i class="fas fa-wallet me-2"></i>Accounts
+            </div>
+            <div class="data-item" data-type="transactions">
+                <i class="fas fa-exchange-alt me-2"></i>Transactions
+            </div>
+            <div class="data-item" data-type="branches">
+                <i class="fas fa-building me-2"></i>Branches
+            </div>
+            <div class="data-item" data-type="atms">
+                <i class="fas fa-credit-card me-2"></i>ATMs
+            </div>
+            <div class="data-item" data-type="agents">
+                <i class="fas fa-user-tie me-2"></i>Agents
+            </div>
+            <div class="data-item" data-type="complaints">
+                <i class="fas fa-comment-dots me-2"></i>Complaints
+            </div>
+            <div class="data-item" data-type="disputes">
+                <i class="fas fa-gavel me-2"></i>Disputes
+            </div>
+            <div class="data-item" data-type="loans">
+                <i class="fas fa-hand-holding-usd me-2"></i>Loans
+            </div>
+            <div class="data-item" data-type="fd_rates">
+                <i class="fas fa-percentage me-2"></i>FD Rates
+            </div>
+            <div class="data-item" data-type="cards">
+                <i class="fas fa-credit-card me-2"></i>Cards
+            </div>
+            <div class="data-item" data-type="cheques">
+                <i class="fas fa-money-check me-2"></i>Cheques
+            </div>
         </div>
     </div>
 
     <div class="main-content">
-        <div class="header-bg">
+        <!-- Home Dashboard View -->
+        <div class="home-dashboard" id="homeDashboard">
+            <div class="header-bg">
+                <div class="container">
+                    <h1 class="display-6"><i class="fas fa-chart-line me-3"></i>BankWise Analytics Dashboard</h1>
+                    <p class="lead">Real-time banking insights and metrics</p>
+                </div>
+            </div>
+
             <div class="container">
-                <h1 class="display-6"><i class="fas fa-table me-3"></i>BankWise Data Dashboard</h1>
-                <p class="lead">Viewing: <span id="currentDataType">Accounts</span></p>
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <div class="action-card" onclick="navigateToData('accounts')">
+                        <div class="action-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="action-title">Manage Accounts</div>
+                        <div class="action-description">View and manage customer accounts</div>
+                    </div>
+                    <div class="action-card" onclick="navigateToData('transactions')">
+                        <div class="action-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="action-title">Transaction History</div>
+                        <div class="action-description">Monitor all banking transactions</div>
+                    </div>
+                    <div class="action-card" onclick="navigateToData('loans')">
+                        <div class="action-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="action-title">Loan Portfolio</div>
+                        <div class="action-description">Track loan applications and status</div>
+                    </div>
+                    <div class="action-card" onclick="navigateToData('agents')">
+                        <div class="action-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="action-title">Agent Performance</div>
+                        <div class="action-description">Monitor agent metrics and availability</div>
+                    </div>
+                </div>
+
+                <!-- Statistics Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value" id="totalAccounts">0</div>
+                        <div class="stat-label">Total Accounts</div>
+                        <div class="stat-change positive">+12.5%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="stat-value" id="totalBalance">₹0</div>
+                        <div class="stat-label">Total Balance</div>
+                        <div class="stat-change positive">+8.3%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="stat-value" id="activeCards">0</div>
+                        <div class="stat-label">Active Cards</div>
+                        <div class="stat-change negative">-2.1%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="stat-value" id="availableAgents">0</div>
+                        <div class="stat-label">Available Agents</div>
+                        <div class="stat-change positive">+5.7%</div>
+                    </div>
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title">Account Types Distribution</div>
+                            <div class="chart-options">
+                                <button class="chart-option active" onclick="updateAccountChart('type')">Type</button>
+                                <button class="chart-option" onclick="updateAccountChart('status')">Status</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="accountChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title">Transaction Trends</div>
+                            <div class="chart-options">
+                                <button class="chart-option active" onclick="updateTransactionChart('daily')">Daily</button>
+                                <button class="chart-option" onclick="updateTransactionChart('weekly')">Weekly</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="transactionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title">Loan Portfolio</div>
+                            <div class="chart-options">
+                                <button class="chart-option active" onclick="updateLoanChart('type')">Type</button>
+                                <button class="chart-option" onclick="updateLoanChart('status')">Status</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="loanChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title">Agent Performance</div>
+                            <div class="chart-options">
+                                <button class="chart-option active" onclick="updateAgentChart('availability')">Availability</button>
+                                <button class="chart-option" onclick="updateAgentChart('performance')">Performance</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="agentChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Feed -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="activity-feed">
+                            <div class="chart-header">
+                                <div class="chart-title">Recent Activities</div>
+                            </div>
+                            <div id="activityFeed">
+                                <!-- Activities will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="activity-feed">
+                            <div class="chart-header">
+                                <div class="chart-title">System Alerts</div>
+                            </div>
+                            <div id="alertsFeed">
+                                <!-- Alerts will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="container mb-5">
-            <div class="card">
-                <div class="card-header bg-white">
-                    <ul class="nav nav-tabs card-header-tabs" id="viewTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="table-tab" data-bs-toggle="tab"
-                                    data-bs-target="#table" type="button" role="tab">
-                                <i class="fas fa-table me-2"></i>Table View
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="json-tab" data-bs-toggle="tab"
-                                    data-bs-target="#json" type="button" role="tab">
-                                <i class="fas fa-code me-2"></i>JSON View
-                            </button>
-                        </li>
-                    </ul>
+        <!-- Data Views (Existing) -->
+        <div id="dataViews" style="display: none;">
+            <div class="header-bg">
+                <div class="container">
+                    <h1 class="display-6"><i class="fas fa-table me-3"></i>BankWise Data Dashboard</h1>
+                    <p class="lead">Viewing: <span id="currentDataType">Accounts</span></p>
                 </div>
-                <div class="card-body">
-                    <div class="tab-content" id="viewTabsContent">
-                        <div class="tab-pane fade show active" id="table" role="tabpanel">
-                            <div class="table-container">
-                                <table class="table">
-                                    <thead id="tableHeader">
-                                        <tr>
-                                            <!-- Dynamically populated -->
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        <!-- Dynamically populated -->
-                                    </tbody>
-                                </table>
-                            </div>
+            </div>
+
+            <div class="container mb-5">
+                <!-- Search Container (only for accounts) -->
+                <div class="search-container" id="searchContainer" style="display: none;">
+                    <div class="search-header">
+                        <div class="search-title">
+                            <i class="fas fa-search me-2"></i>Search Accounts
                         </div>
-                        <div class="tab-pane fade" id="json" role="tabpanel">
-                            <div class="json-view" style="background-color: var(--github-badge-bg); border: 1px solid var(--github-border); border-radius: 0; padding: 15px; max-height: 500px; overflow-y: auto;">
-                                <pre id="jsonData" style="color: var(--github-text); font-family: monospace; font-size: 12px; margin: 0;"></pre>
+                    </div>
+                    <div class="search-controls">
+                        <div class="search-input-group">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" id="searchInput"
+                                   placeholder="Search by account number, customer name, or mobile number...">
+                        </div>
+                        <select class="search-filter" id="accountTypeFilter">
+                            <option value="">All Account Types</option>
+                            <option value="Savings">Savings</option>
+                            <option value="Current">Current</option>
+                            <option value="Salary">Salary</option>
+                        </select>
+                        <select class="search-filter" id="accountStatusFilter">
+                            <option value="">All Statuses</option>
+                            <option value="ACTIVE">Active</option>
+                            <option value="INACTIVE">Inactive</option>
+                            <option value="FROZEN">Frozen</option>
+                        </select>
+                        <select class="search-filter" id="kycStatusFilter">
+                            <option value="">All KYC Status</option>
+                            <option value="VERIFIED">Verified</option>
+                            <option value="PENDING">Pending</option>
+                            <option value="UNDER_REVIEW">Under Review</option>
+                        </select>
+                        <button class="btn btn-outline-secondary btn-sm" id="clearSearchBtn">
+                            <i class="fas fa-times me-1"></i>Clear
+                        </button>
+                    </div>
+                    <div class="search-stats" id="searchStats" style="display: none;">
+                        <div class="search-stat">
+                            <i class="fas fa-database search-stat-icon"></i>
+                            <span id="totalResults">0</span> total accounts
+                        </div>
+                        <div class="search-stat">
+                            <i class="fas fa-filter search-stat-icon"></i>
+                            <span id="filteredResults">0</span> filtered results
+                        </div>
+                        <div class="search-stat">
+                            <i class="fas fa-clock search-stat-icon"></i>
+                            <span id="searchTime">0</span>ms search time
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <ul class="nav nav-tabs card-header-tabs" id="viewTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="table-tab" data-bs-toggle="tab"
+                                        data-bs-target="#table" type="button" role="tab">
+                                    <i class="fas fa-table me-2"></i>Table View
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation" id="agents-tab-container" style="display: none;">
+                                <button class="nav-link" id="cards-tab" data-bs-toggle="tab"
+                                        data-bs-target="#cards" type="button" role="tab">
+                                    <i class="fas fa-id-card me-2"></i>Cards View
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="json-tab" data-bs-toggle="tab"
+                                        data-bs-target="#json" type="button" role="tab">
+                                    <i class="fas fa-code me-2"></i>JSON View
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="viewTabsContent">
+                            <div class="tab-pane fade show active" id="table" role="tabpanel">
+                                <div class="table-container">
+                                    <table class="table">
+                                        <thead id="tableHeader">
+                                            <tr>
+                                                <!-- Dynamically populated -->
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                            <!-- Dynamically populated -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cards" role="tabpanel">
+                                <div class="agents-container" id="agentsContainer">
+                                    <!-- Agent cards will be dynamically populated here -->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="json" role="tabpanel">
+                                <div class="json-view" style="background-color: var(--github-badge-bg); border: 1px solid var(--github-border); border-radius: 0; padding: 15px; max-height: 500px; overflow-y: auto;">
+                                    <pre id="jsonData" style="color: var(--github-text); font-family: monospace; font-size: 12px; margin: 0;"></pre>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -281,6 +1211,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
@@ -297,7 +1228,7 @@
             }
         });
 
-        // Data loading and rendering
+        // Dashboard elements
         const loadingSpinner = document.getElementById('loadingSpinner');
         const dataItems = document.querySelectorAll('.data-item');
         const currentDataType = document.getElementById('currentDataType');
@@ -305,10 +1236,651 @@
         const tableBody = document.getElementById('tableBody');
         const jsonData = document.getElementById('jsonData');
         const sourceToggle = document.getElementById('sourceToggle');
+        const agentsTabContainer = document.getElementById('agents-tab-container');
+        const agentsContainer = document.getElementById('agentsContainer');
+        const homeDashboard = document.getElementById('homeDashboard');
+        const dataViews = document.getElementById('dataViews');
+        
+        // Search elements
+        const searchContainer = document.getElementById('searchContainer');
+        const searchInput = document.getElementById('searchInput');
+        const accountTypeFilter = document.getElementById('accountTypeFilter');
+        const accountStatusFilter = document.getElementById('accountStatusFilter');
+        const kycStatusFilter = document.getElementById('kycStatusFilter');
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+        const searchStats = document.getElementById('searchStats');
+        const totalResults = document.getElementById('totalResults');
+        const filteredResults = document.getElementById('filteredResults');
+        const searchTime = document.getElementById('searchTime');
         
         let currentData = [];
-        let currentType = 'accounts';
+        let currentType = 'home';
         let useDatabase = false;
+        let charts = {};
+        let searchTimeout;
+        let filteredData = [];
+        
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            showHomeDashboard();
+            initializeEventListeners();
+        });
+        
+        // Function to show home dashboard
+        function showHomeDashboard() {
+            homeDashboard.style.display = 'block';
+            dataViews.style.display = 'none';
+            loadDashboardData();
+        }
+        
+        // Function to show data views
+        function showDataViews() {
+            homeDashboard.style.display = 'none';
+            dataViews.style.display = 'block';
+        }
+        
+        // Function to navigate to data type
+        function navigateToData(dataType) {
+            currentType = dataType;
+            showDataViews();
+            loadData(dataType);
+            
+            // Update active state in sidebar
+            dataItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.type === dataType) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        // Function to initialize event listeners
+        function initializeEventListeners() {
+            // Data item clicks
+            dataItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const dataType = this.dataset.type;
+                    
+                    // Update active state
+                    dataItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (dataType === 'home') {
+                        showHomeDashboard();
+                    } else {
+                        navigateToData(dataType);
+                    }
+                });
+            });
+            
+            // Source toggle
+            sourceToggle.addEventListener('change', function() {
+                useDatabase = this.checked;
+                if (currentType !== 'home') {
+                    loadData(currentType);
+                } else {
+                    loadDashboardData();
+                }
+            });
+        }
+        
+        // Function to load dashboard data
+        async function loadDashboardData() {
+            showLoading();
+            try {
+                // Load all data types for dashboard
+                const dataTypes = ['accounts', 'transactions', 'agents', 'cards', 'loans', 'complaints'];
+                const dashboardData = {};
+                
+                for (const dataType of dataTypes) {
+                    const source = useDatabase ? 'db' : 'mock';
+                    const url = `/dashboard/api?source=${source}&data_type=${dataType}`;
+                    const response = await fetch(url);
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        dashboardData[dataType] = data.data || [];
+                    }
+                }
+                
+                updateDashboardStats(dashboardData);
+                initializeCharts(dashboardData);
+                populateActivityFeeds(dashboardData);
+                
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Function to update dashboard statistics
+        function updateDashboardStats(data) {
+            // Update accounts stats
+            const accounts = data.accounts || [];
+            document.getElementById('totalAccounts').textContent = accounts.length.toLocaleString();
+            
+            const totalBalance = accounts.reduce((sum, account) => sum + (account.balance || 0), 0);
+            document.getElementById('totalBalance').textContent = '₹' + totalBalance.toLocaleString('en-IN', {
+                maximumFractionDigits: 0
+            });
+            
+            // Update cards stats
+            const cards = data.cards || [];
+            const activeCards = cards.filter(card => card.card_status === 'ACTIVE').length;
+            document.getElementById('activeCards').textContent = activeCards.toLocaleString();
+            
+            // Update agents stats
+            const agents = data.agents || [];
+            const availableAgents = agents.filter(agent => agent.is_available).length;
+            document.getElementById('availableAgents').textContent = availableAgents.toLocaleString();
+        }
+        
+        // Function to initialize charts
+        function initializeCharts(data) {
+            const isDarkTheme = html.getAttribute('data-bs-theme') === 'dark';
+            const textColor = isDarkTheme ? '#c9d1d9' : '#24292f';
+            const gridColor = isDarkTheme ? '#30363d' : '#d0d7de';
+            
+            // Account Types Chart
+            const accountCtx = document.getElementById('accountChart').getContext('2d');
+            if (charts.account) charts.account.destroy();
+            
+            const accountTypes = {};
+            (data.accounts || []).forEach(account => {
+                accountTypes[account.account_type] = (accountTypes[account.account_type] || 0) + 1;
+            });
+            
+            charts.account = new Chart(accountCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(accountTypes),
+                    datasets: [{
+                        data: Object.values(accountTypes),
+                        backgroundColor: [
+                            '#0969da',
+                            '#1a7f37',
+                            '#8250df',
+                            '#cf222e',
+                            '#bc4c00'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: textColor, font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+            
+            // Transaction Trends Chart - Line Chart
+            const transactionCtx = document.getElementById('transactionChart').getContext('2d');
+            if (charts.transaction) charts.transaction.destroy();
+            
+            // Generate sample time-series data for transaction trends
+            const last7Days = [];
+            const transactionCounts = [];
+            for (let i = 6; i >= 0; i--) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                last7Days.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+                transactionCounts.push(Math.floor(Math.random() * 100) + 50);
+            }
+            
+            charts.transaction = new Chart(transactionCtx, {
+                type: 'line',
+                data: {
+                    labels: last7Days,
+                    datasets: [{
+                        label: 'Transactions',
+                        data: transactionCounts,
+                        borderColor: '#0969da',
+                        backgroundColor: 'rgba(9, 105, 218, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#0969da',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: textColor, font: { size: 10 } },
+                            grid: { color: gridColor, drawBorder: false }
+                        },
+                        x: {
+                            ticks: { color: textColor, font: { size: 10 } },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: isDarkTheme ? '#30363d' : '#fff',
+                            titleColor: textColor,
+                            bodyColor: textColor,
+                            borderColor: gridColor,
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+            
+            // Loan Portfolio Chart
+            const loanCtx = document.getElementById('loanChart').getContext('2d');
+            if (charts.loan) charts.loan.destroy();
+            
+            const loanTypes = {};
+            (data.loans || []).forEach(loan => {
+                loanTypes[loan.loan_type || 'Personal'] = (loanTypes[loan.loan_type || 'Personal'] || 0) + 1;
+            });
+            
+            charts.loan = new Chart(loanCtx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(loanTypes),
+                    datasets: [{
+                        data: Object.values(loanTypes),
+                        backgroundColor: [
+                            '#1a7f37',
+                            '#8250df',
+                            '#cf222e',
+                            '#bc4c00',
+                            '#0969da'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: textColor, font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+            
+            // Agent Performance Chart - Bar Chart
+            const agentCtx = document.getElementById('agentChart').getContext('2d');
+            if (charts.agent) charts.agent.destroy();
+            
+            const agentStatus = {};
+            (data.agents || []).forEach(agent => {
+                agentStatus[agent.current_status] = (agentStatus[agent.current_status] || 0) + 1;
+            });
+            
+            charts.agent = new Chart(agentCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(agentStatus),
+                    datasets: [{
+                        label: 'Agents',
+                        data: Object.values(agentStatus),
+                        backgroundColor: [
+                            'rgba(26, 127, 55, 0.8)',
+                            'rgba(130, 80, 223, 0.8)',
+                            'rgba(207, 34, 46, 0.8)',
+                            'rgba(188, 76, 0, 0.8)',
+                            'rgba(9, 105, 218, 0.8)'
+                        ],
+                        borderColor: [
+                            '#1a7f37',
+                            '#8250df',
+                            '#cf222e',
+                            '#bc4c00',
+                            '#0969da'
+                        ],
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: textColor, font: { size: 10 } },
+                            grid: { color: gridColor, drawBorder: false }
+                        },
+                        x: {
+                            ticks: { color: textColor, font: { size: 10 } },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: isDarkTheme ? '#30363d' : '#fff',
+                            titleColor: textColor,
+                            bodyColor: textColor,
+                            borderColor: gridColor,
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Function to populate activity feeds
+        function populateActivityFeeds(data) {
+            const activityFeed = document.getElementById('activityFeed');
+            const alertsFeed = document.getElementById('alertsFeed');
+            
+            // Recent Activities
+            const activities = [];
+            
+            // Add account activities
+            (data.accounts || []).slice(0, 3).forEach(account => {
+                activities.push({
+                    icon: 'fa-user-plus',
+                    color: '#1a7f37',
+                    title: 'New Account Created',
+                    description: `${account.customer_name} - ${account.account_type}`,
+                    time: 'Just now'
+                });
+            });
+            
+            // Update activity feed
+            const activityFeedElement = document.getElementById('activityFeed');
+            if (activityFeedElement) {
+                activityFeedElement.innerHTML = activities.slice(0, 5).map(activity => `
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background-color: ${activity.color}20; color: ${activity.color};">
+                            <i class="fas ${activity.icon}"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">${activity.title}</div>
+                            <div class="activity-description">${activity.description}</div>
+                            <div class="activity-time">${activity.time}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        // Search functionality for accounts
+        function initializeSearch() {
+            // Clear previous event listeners
+            if (searchInput) {
+                searchInput.removeEventListener('input', handleSearchInput);
+            }
+            if (clearSearchBtn) {
+                clearSearchBtn.removeEventListener('click', clearSearch);
+            }
+            if (accountTypeFilter) {
+                accountTypeFilter.removeEventListener('change', handleSearchInput);
+            }
+            if (accountStatusFilter) {
+                accountStatusFilter.removeEventListener('change', handleSearchInput);
+            }
+            if (kycStatusFilter) {
+                kycStatusFilter.removeEventListener('change', handleSearchInput);
+            }
+            
+            // Add event listeners
+            searchInput.addEventListener('input', handleSearchInput);
+            clearSearchBtn.addEventListener('click', clearSearch);
+            accountTypeFilter.addEventListener('change', handleSearchInput);
+            accountStatusFilter.addEventListener('change', handleSearchInput);
+            kycStatusFilter.addEventListener('change', handleSearchInput);
+        }
+        
+        function handleSearchInput() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performSearch();
+            }, 300); // Debounce for 300ms
+        }
+        
+        function performSearch() {
+            const startTime = performance.now();
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const accountType = accountTypeFilter.value;
+            const accountStatus = accountStatusFilter.value;
+            const kycStatus = kycStatusFilter.value;
+            
+            // Start with all accounts
+            let results = [...currentData];
+            
+            // Apply text search (judicious search on key fields)
+            if (searchTerm) {
+                results = results.filter(account => {
+                    // Search in most relevant fields
+                    return (
+                        account.account_number?.toLowerCase().includes(searchTerm) ||
+                        account.customer_name?.toLowerCase().includes(searchTerm) ||
+                        account.customer_id?.toLowerCase().includes(searchTerm) ||
+                        account.mobile_numbers?.some(mobile => mobile.toLowerCase().includes(searchTerm)) ||
+                        account.email?.toLowerCase().includes(searchTerm) ||
+                        account.branch_code?.toLowerCase().includes(searchTerm) ||
+                        account.ifsc_code?.toLowerCase().includes(searchTerm)
+                    );
+                });
+            }
+            
+            // Apply filters
+            if (accountType) {
+                results = results.filter(account => account.account_type === accountType);
+            }
+            
+            if (accountStatus) {
+                results = results.filter(account => account.account_status === accountStatus);
+            }
+            
+            if (kycStatus) {
+                results = results.filter(account => account.kyc_status === kycStatus);
+            }
+            
+            // Update filtered data
+            filteredData = results;
+            
+            // Update search stats
+            const endTime = performance.now();
+            updateSearchStats(currentData.length, results.length, endTime - startTime);
+            
+            // Update display
+            displaySearchResults(results);
+        }
+        
+        function updateSearchStats(total, filtered, searchTimeMs) {
+            totalResults.textContent = total.toLocaleString();
+            filteredResults.textContent = filtered.toLocaleString();
+            searchTime.textContent = searchTimeMs.toFixed(1);
+            searchStats.style.display = 'flex';
+        }
+        
+        function displaySearchResults(results) {
+            if (results.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="100%" class="text-center">
+                            <div class="no-results">
+                                <div class="no-results-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div>No accounts found matching your criteria</div>
+                                <div style="font-size: 14px; margin-top: 10px; opacity: 0.7;">
+                                    Try adjusting your search terms or filters
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            // Clear existing content
+            tableBody.innerHTML = '';
+            
+            // Get headers from first result
+            const headers = Object.keys(results[0]);
+            
+            // Create table rows with highlighted search terms
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            results.forEach(item => {
+                const tr = document.createElement('tr');
+                headers.forEach(header => {
+                    const td = document.createElement('td');
+                    let value = item[header];
+                    
+                    if (typeof value === 'object' && value !== null) {
+                        value = JSON.stringify(value);
+                    } else if (value === null) {
+                        value = '';
+                    } else {
+                        value = String(value);
+                    }
+                    
+                    // Highlight search terms in relevant fields
+                    if (searchTerm && ['account_number', 'customer_name', 'customer_id', 'mobile_numbers', 'email', 'branch_code', 'ifsc_code'].includes(header)) {
+                        value = highlightSearchTerm(value, searchTerm);
+                    }
+                    
+                    td.innerHTML = value;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+        
+        function highlightSearchTerm(text, searchTerm) {
+            if (!searchTerm) return text;
+            
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+        
+        function clearSearch() {
+            searchInput.value = '';
+            accountTypeFilter.value = '';
+            accountStatusFilter.value = '';
+            kycStatusFilter.value = '';
+            searchStats.style.display = 'none';
+            
+            // Reset to original data
+            filteredData = [...currentData];
+            displayData(currentData, 'accounts');
+        }
+        
+        // Function to populate activity feeds
+        function populateActivityFeeds(data) {
+            const activities = [];
+            
+            // Add account activities
+            (data.accounts || []).slice(0, 3).forEach(account => {
+                activities.push({
+                    icon: 'fa-user-plus',
+                    color: '#1a7f37',
+                    title: 'New Account Created',
+                    description: `${account.customer_name} - ${account.account_type}`,
+                    time: 'Just now'
+                });
+            });
+            
+            // Add transaction activities
+            (data.transactions || []).slice(0, 3).forEach(transaction => {
+                activities.push({
+                    icon: 'fa-exchange-alt',
+                    color: '#0969da',
+                    title: 'Transaction Processed',
+                    description: `${transaction.type} - ₹${transaction.amount}`,
+                    time: '2 mins ago'
+                });
+            });
+            
+            activityFeed.innerHTML = activities.map(activity => `
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: ${activity.color}20; color: ${activity.color};">
+                        <i class="fas ${activity.icon}"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">${activity.title}</div>
+                        <div class="activity-description">${activity.description}</div>
+                        <div class="activity-time">${activity.time}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // System Alerts
+            const alerts = [
+                {
+                    icon: 'fa-exclamation-triangle',
+                    color: '#bc4c00',
+                    title: 'High Transaction Volume',
+                    description: 'Transaction volume increased by 25% today',
+                    time: '5 mins ago'
+                },
+                {
+                    icon: 'fa-info-circle',
+                    color: '#0969da',
+                    title: 'System Maintenance',
+                    description: 'Scheduled maintenance tonight at 2 AM',
+                    time: '1 hour ago'
+                },
+                {
+                    icon: 'fa-check-circle',
+                    color: '#1a7f37',
+                    title: 'Backup Completed',
+                    description: 'Daily backup completed successfully',
+                    time: '2 hours ago'
+                }
+            ];
+            
+            alertsFeed.innerHTML = alerts.map(alert => `
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: ${alert.color}20; color: ${alert.color};">
+                        <i class="fas ${alert.icon}"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">${alert.title}</div>
+                        <div class="activity-description">${alert.description}</div>
+                        <div class="activity-time">${alert.time}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Chart update functions
+        function updateAccountChart(type) {
+            // Update chart based on type selection
+            console.log('Updating account chart:', type);
+        }
+        
+        function updateTransactionChart(period) {
+            // Update chart based on period selection
+            console.log('Updating transaction chart:', period);
+        }
+        
+        function updateLoanChart(type) {
+            // Update chart based on type selection
+            console.log('Updating loan chart:', type);
+        }
+        
+        function updateAgentChart(metric) {
+            // Update chart based on metric selection
+            console.log('Updating agent chart:', metric);
+        }
         
         // Function to show loading spinner
         function showLoading() {
@@ -325,6 +1897,33 @@
             showLoading();
             currentType = dataType;
             currentDataType.textContent = dataType.charAt(0).toUpperCase() + dataType.slice(1);
+            
+            // Show/hide agents tab based on data type
+            if (dataType === 'agents') {
+                agentsTabContainer.style.display = 'block';
+                // Switch to cards view for agents
+                const tableTab = document.getElementById('table-tab');
+                const cardsTab = document.getElementById('cards-tab');
+                tableTab.classList.remove('active');
+                cardsTab.classList.add('active');
+                
+                const tablePane = document.getElementById('table');
+                const cardsPane = document.getElementById('cards');
+                tablePane.classList.remove('show', 'active');
+                cardsPane.classList.add('show', 'active');
+            } else {
+                agentsTabContainer.style.display = 'none';
+                // Switch to table view for non-agents
+                const tableTab = document.getElementById('table-tab');
+                const cardsTab = document.getElementById('cards-tab');
+                tableTab.classList.add('active');
+                cardsTab.classList.remove('active');
+                
+                const tablePane = document.getElementById('table');
+                const cardsPane = document.getElementById('cards');
+                tablePane.classList.add('show', 'active');
+                cardsPane.classList.remove('show', 'active');
+            }
             
             try {
                 const source = useDatabase ? 'db' : 'mock';
@@ -343,12 +1942,18 @@
                 
                 currentData = data.data || [];
                 renderTable(currentData);
+                if (dataType === 'agents') {
+                    renderAgentCards(currentData);
+                }
                 renderJson(currentData);
             } catch (error) {
                 console.error('Error loading data:', error);
                 alert('Failed to load data. Please try again.');
                 // Show empty data on error
                 renderTable([]);
+                if (dataType === 'agents') {
+                    renderAgentCards([]);
+                }
                 renderJson([]);
             } finally {
                 hideLoading();
@@ -413,6 +2018,104 @@
         // Function to render JSON
         function renderJson(data) {
             jsonData.textContent = JSON.stringify(data, null, 4);
+        }
+        
+        // Function to render agent cards
+        function renderAgentCards(data) {
+            try {
+                if (data.length === 0) {
+                    agentsContainer.innerHTML = '<div class="alert alert-info">No agents data available</div>';
+                    return;
+                }
+                
+                agentsContainer.innerHTML = '';
+                
+                data.forEach((agent, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'agent-card';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    
+                    // Get initials for avatar
+                    const initials = agent.full_name ? agent.full_name.split(' ').map(n => n[0]).join('').toUpperCase() : 'AG';
+                    
+                    // Determine status class
+                    const statusClass = getStatusClass(agent.current_status);
+                    
+                    // Format skills
+                    const skills = agent.skills ? agent.skills.slice(0, 4).map(skill =>
+                        `<span class="skill-badge">${skill}</span>`
+                    ).join('') : '';
+                    
+                    card.innerHTML = `
+                        <div class="agent-header">
+                            <div class="agent-avatar">${initials}</div>
+                            <div class="agent-info">
+                                <h5>${agent.full_name || 'Unknown Agent'}</h5>
+                                <p>${agent.agent_id || 'N/A'} • ${agent.department || 'N/A'}</p>
+                            </div>
+                        </div>
+                        <div class="agent-status ${statusClass}">${agent.current_status || 'Unknown'}</div>
+                        <div class="agent-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Specialization:</span>
+                                <span class="detail-value">${agent.specialization || 'N/A'}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Experience:</span>
+                                <span class="detail-value">${agent.years_experience || 0} years</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">${agent.base_city || 'N/A'}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Work Mode:</span>
+                                <span class="detail-value">${agent.work_mode || 'N/A'}</span>
+                            </div>
+                        </div>
+                        <div class="agent-skills">
+                            ${skills}
+                        </div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <div class="metric-value">${agent.performance_rating || 0}</div>
+                                <div class="metric-label">Rating</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">${agent.customer_satisfaction_rate || 0}%</div>
+                                <div class="metric-label">Satisfaction</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">${agent.cases_handled || 0}</div>
+                                <div class="metric-label">Cases</div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    agentsContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error rendering agent cards:', error);
+                agentsContainer.innerHTML = '<div class="alert alert-danger">Error rendering agent cards</div>';
+            }
+        }
+        
+        // Helper function to get status class
+        function getStatusClass(status) {
+            switch (status?.toLowerCase()) {
+                case 'available':
+                    return 'status-available';
+                case 'busy':
+                    return 'status-busy';
+                case 'on break':
+                    return 'status-break';
+                case 'in training':
+                    return 'status-training';
+                case 'off duty':
+                    return 'status-off';
+                default:
+                    return 'status-off';
+            }
         }
         
         // Event listeners
