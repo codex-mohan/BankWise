@@ -324,3 +324,138 @@ DETAIL:  Key (ifsc)=(BARB8277) already exists.
 2025-10-02 20:05:41,216 - database - INFO - BankWise AI Banking Support API - Database tables already exist
 2025-10-02 20:05:44,503 - database - INFO - All tables contain data. Skipping population.
 2025-10-02 20:05:44,623 - main - INFO - Database initialized successfully
+2025-10-06 12:25:33,363 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-06 12:25:33,370 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-06 12:25:33,399 - main - INFO - Starting BankWise AI Banking Support API
+2025-10-06 12:25:35,697 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-06 12:25:39,425 - database - INFO - Found empty tables: ['branches', 'atms']. Populating with data...
+2025-10-06 12:25:39,426 - database - INFO - BankWise AI Banking Support API - Populating database with initial data from JSON files...
+2025-10-06 12:25:39,731 - database - WARNING - Failed to insert account 810224329338: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(810224329338) already exists.
+2025-10-06 12:25:39,939 - database - WARNING - Failed to insert account 669723994741: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(669723994741) already exists.
+2025-10-06 12:25:40,140 - database - WARNING - Failed to insert account 305176132128: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(305176132128) already exists.
+2025-10-06 12:25:40,302 - database - WARNING - Failed to insert account 898370214157: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(898370214157) already exists.
+2025-10-06 12:25:40,464 - database - WARNING - Failed to insert account 229283647490: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(229283647490) already exists.
+2025-10-06 12:25:40,596 - database - WARNING - Failed to insert account 420715023214: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(420715023214) already exists.
+2025-10-06 12:25:40,720 - database - WARNING - Failed to insert account 178995971160: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(178995971160) already exists.
+2025-10-06 12:25:40,963 - database - WARNING - Failed to insert account 416930141726: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(416930141726) already exists.
+2025-10-06 12:25:41,167 - database - WARNING - Failed to insert account 515553284672: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(515553284672) already exists.
+2025-10-06 12:25:41,326 - database - WARNING - Failed to insert account 919173669942: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(919173669942) already exists.
+2025-10-06 12:25:41,456 - database - WARNING - Failed to insert account 660168183947: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(660168183947) already exists.
+2025-10-06 12:25:41,616 - database - WARNING - Failed to insert account 894691507189: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(894691507189) already exists.
+2025-10-06 12:25:41,755 - database - WARNING - Failed to insert account 325179810320: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(325179810320) already exists.
+2025-10-06 12:25:41,910 - database - WARNING - Failed to insert account 767082318059: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(767082318059) already exists.
+2025-10-06 12:25:42,055 - database - WARNING - Failed to insert account 806462072537: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(806462072537) already exists.
+2025-10-06 12:25:42,177 - database - WARNING - Failed to insert account 613432553489: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(613432553489) already exists.
+2025-10-06 12:25:42,310 - database - WARNING - Failed to insert account 865087320592: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(865087320592) already exists.
+2025-10-06 12:25:42,465 - database - WARNING - Failed to insert account 164878625431: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(164878625431) already exists.
+2025-10-06 12:25:42,626 - database - WARNING - Failed to insert account 609465124007: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(609465124007) already exists.
+2025-10-06 12:25:42,761 - database - WARNING - Failed to insert account 889768362801: duplicate key value violates unique constraint "accounts_account_number_key"
+DETAIL:  Key (account_number)=(889768362801) already exists.
+2025-10-06 12:25:42,761 - database - INFO - Inserted 0 cards, skipped 39 cards with invalid references
+2025-10-06 12:25:42,761 - database - INFO - Inserted 0 transactions, skipped 39 transactions with invalid references
+2025-10-06 12:26:27,071 - database - INFO - Inserted 0 complaints, skipped 50 complaints with invalid references
+2025-10-06 12:26:27,071 - database - INFO - Inserted 0 disputes, skipped 30 disputes with invalid references
+2025-10-06 12:26:27,071 - database - INFO - Inserted 0 loans, skipped 40 loans with invalid references
+2025-10-06 12:26:31,760 - database - INFO - Inserted 0 cheques, skipped 37 cheques with invalid references
+2025-10-06 12:26:31,761 - database - INFO - BankWise AI Banking Support API - Database populated with 0 accounts, 0 cards, 0 transactions (limited), 30 branches, 229 ATMs, 0 complaints, 0 disputes, 0 loans, 26 FD rates, and 0 cheques
+2025-10-06 12:26:31,912 - main - INFO - Database initialized successfully
+2025-10-19 02:44:57,954 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-19 02:44:57,964 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-19 02:44:58,015 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-10-19 02:45:01,793 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-19 02:45:06,209 - database - INFO - All tables contain data. Skipping population.
+2025-10-19 02:45:06,516 - __main__ - INFO - Database initialized successfully
+2025-10-19 02:45:17,156 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 02:45:17,156 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 02:45:17,156 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 02:45:17,925 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 02:45:17,926 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 02:45:17,926 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 02:45:21,292 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 02:45:21,292 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 02:45:21,292 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 02:45:22,360 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 02:45:22,360 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 02:45:22,360 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 02:45:24,469 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 02:45:24,470 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 02:45:24,470 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 02:45:26,538 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 02:45:26,538 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 02:45:26,538 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 02:45:28,599 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 02:45:28,600 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 02:45:28,600 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 02:45:31,280 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 02:45:31,280 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 02:45:31,280 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 02:45:41,519 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 02:45:41,519 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 02:45:41,519 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 02:45:41,960 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 02:45:41,961 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 02:45:41,961 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 02:45:42,331 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 02:45:42,332 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 02:45:42,332 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 02:45:42,868 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 02:45:42,868 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 02:45:42,868 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 02:45:43,345 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 02:45:43,345 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 02:45:43,345 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 02:46:00,138 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 02:46:00,138 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 02:46:00,138 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 02:46:00,511 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 02:46:00,512 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 02:46:00,512 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 02:46:01,074 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 02:46:01,074 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 02:46:01,074 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 02:46:01,931 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 02:46:01,931 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 02:46:01,931 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 02:46:02,930 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 02:46:02,930 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 02:46:02,930 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 02:46:03,308 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 02:46:03,308 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 02:46:03,308 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 02:46:03,832 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 02:46:03,833 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 02:46:03,833 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 02:46:04,264 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 02:46:04,265 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 02:46:04,265 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 02:46:04,689 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 02:46:04,689 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 02:46:04,689 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 02:46:05,561 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 02:46:05,561 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 02:46:05,561 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 02:46:06,294 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 02:46:06,294 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 02:46:06,294 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 02:46:07,015 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 02:46:07,015 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 02:46:07,015 - routes.dashboard - INFO - Returning 20 records for accounts

@@ -1,0 +1,237 @@
+{
+  "id": "68d624b26a3c8dde041b228e",
+  "autoLayout": true,
+  "description": "",
+  "name": "BankWise",
+  "nodesList": [
+    {
+      "position": {
+        "x": 660,
+        "y": 30
+      },
+      "defaultNodeConfig": {
+        "name": "Start Node",
+        "temperature": 0.5,
+        "messageType": "PROMPT",
+        "messageOrPrompt": "Greet the user and understand the query",
+        "knowledgeBaseIds": []
+      },
+      "width": 335,
+      "height": 165,
+      "selected": false,
+      "dragging": false,
+      "measured": {
+        "width": 335,
+        "height": 165
+      },
+      "nodeId": "575740a6bcad3f44cb3c",
+      "type": "START",
+      "data": {
+        "label": "",
+        "description": ""
+      },
+      "hasError": false
+    },
+    {
+      "position": {
+        "x": 660,
+        "y": 270
+      },
+      "width": 335,
+      "height": 165,
+      "selected": false,
+      "dragging": false,
+      "measured": {
+        "width": 335,
+        "height": 165
+      },
+      "nodeId": "7e436cc358b6e896e36e",
+      "type": "USER",
+      "data": {
+        "label": "",
+        "description": ""
+      },
+      "userNodeConfig": {
+        "name": "User Node"
+      }
+    },
+    {
+      "position": {
+        "x": 630,
+        "y": 570
+      },
+      "width": 335,
+      "height": 165,
+      "selected": false,
+      "dragging": false,
+      "measured": {
+        "width": 335,
+        "height": 165
+      },
+      "nodeId": "9791009ff6b491b96080",
+      "type": "DECISION",
+      "data": {
+        "label": "",
+        "description": ""
+      },
+      "hasError": false,
+      "decisionNodeConfig": {
+        "prompt": "If the user request to get their account details ",
+        "repeatEnabled": true,
+        "repeatMaxCount": 2,
+        "knowledgeBaseIds": [
+          null
+        ]
+      }
+    },
+    {
+      "position": {
+        "x": 165,
+        "y": 795
+      },
+      "width": 335,
+      "height": 165,
+      "selected": false,
+      "dragging": false,
+      "measured": {
+        "width": 335,
+        "height": 165
+      },
+      "nodeId": "7fc25711e8bc9d351ba5",
+      "type": "DEFAULT",
+      "data": {
+        "label": "",
+        "description": ""
+      },
+      "hasError": false,
+      "defaultNodeConfig": {
+        "name": "Get Account balance",
+        "temperature": 0.5,
+        "messageType": "STATIC",
+        "messageOrPrompt": "Get the user's Account details using the given action",
+        "action": "68f25d3b586ea783459e4673",
+        "knowledgeBaseIds": []
+      }
+    },
+    {
+      "position": {
+        "x": 780,
+        "y": 810
+      },
+      "width": 335,
+      "height": 165,
+      "selected": false,
+      "dragging": false,
+      "measured": {
+        "width": 335,
+        "height": 165
+      },
+      "nodeId": "314599a068c3517c0300",
+      "type": "DEFAULT",
+      "data": {
+        "label": "",
+        "description": ""
+      },
+      "hasError": false,
+      "defaultNodeConfig": {
+        "name": "Other action",
+        "temperature": 0.5,
+        "messageType": "PROMPT",
+        "messageOrPrompt": "Respond that you can assist the user. If the user want to know something respond accordingly",
+        "action": "",
+        "knowledgeBaseIds": []
+      }
+    }
+  ],
+  "edgesList": [
+    {
+      "edgeId": "xy-edge__575740a6bcad3f44cb3csource-bottom-7e436cc358b6e896e36etarget-top",
+      "hasError": false,
+      "data": {
+        "description": "",
+        "label": ""
+      },
+      "type": "genvoice_edge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "height": 25,
+        "width": 20
+      },
+      "animated": false,
+      "selectable": true,
+      "source": "575740a6bcad3f44cb3c",
+      "sourceHandle": "source-bottom",
+      "target": "7e436cc358b6e896e36e",
+      "targetHandle": "target-top",
+      "selected": false
+    },
+    {
+      "edgeId": "9791009ff6b491b96080-7fc25711e8bc9d351ba5",
+      "hasError": false,
+      "data": {
+        "description": "If it is about account details",
+        "label": "If it is about account details"
+      },
+      "type": "genvoice_edge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "height": 25,
+        "width": 20
+      },
+      "animated": false,
+      "selectable": true,
+      "source": "9791009ff6b491b96080",
+      "target": "7fc25711e8bc9d351ba5",
+      "selected": false,
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "edgeId": "9791009ff6b491b96080-314599a068c3517c0300",
+      "hasError": false,
+      "data": {
+        "description": "If the task can't be done",
+        "label": "If the task can't be done"
+      },
+      "type": "genvoice_edge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "height": 25,
+        "width": 20
+      },
+      "animated": false,
+      "selectable": true,
+      "source": "9791009ff6b491b96080",
+      "target": "314599a068c3517c0300",
+      "selected": false,
+      "sourceHandle": "source-bottom",
+      "targetHandle": "target-top"
+    },
+    {
+      "edgeId": "xy-edge__7e436cc358b6e896e36esource-bottom-9791009ff6b491b96080target-top",
+      "hasError": false,
+      "data": {
+        "description": "",
+        "label": ""
+      },
+      "type": "genvoice_edge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "height": 25,
+        "width": 20
+      },
+      "animated": false,
+      "selectable": true,
+      "source": "7e436cc358b6e896e36e",
+      "sourceHandle": "source-bottom",
+      "target": "9791009ff6b491b96080",
+      "targetHandle": "target-top",
+      "markerStart": {
+        "type": "arrowclosed",
+        "height": 25,
+        "width": 20
+      },
+      "selected": false
+    }
+  ]
+}
