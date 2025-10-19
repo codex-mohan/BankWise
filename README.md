@@ -425,12 +425,13 @@ The Judge Dashboard provides a sophisticated web interface for hackathon judges 
 
 **Features:**
 
-- **Interactive Data Tables**: Browse all mock data in sortable, searchable tables
-- **Dual Data Sources**: Switch between mock data and database views
-- **Multiple Data Types**: View accounts, transactions, branches, complaints, and more
-- **Real-time Updates**: Auto-refresh every 5 minutes
-- **Responsive Design**: Works on desktop and mobile devices
-- **GitHub Theme**: Professional dark/light theme support
+- **📊 Interactive Home Page**: A central dashboard featuring interactive graphs (line, pie, bar, and torus charts) built with **Chart.js**. These charts provide a comprehensive visual summary of all data in the database.
+- **🔍 Powerful Search & Filtering**: Browse all mock data in sortable tables with comprehensive search and filtering capabilities for every view.
+- **↔️ Dual Data Sources**: Switch between live database views and static mock data files.
+- **📑 Multiple Data Types**: View accounts, transactions, branches, complaints, and more.
+- **🔄 Real-time Updates**: Auto-refresh every 5 minutes.
+- **📱 Responsive Design**: Works seamlessly on desktop and mobile devices.
+- **🎨 GitHub Theme**: Professional dark/light theme support.
 
 **Access:**
 
@@ -440,13 +441,35 @@ The Judge Dashboard provides a sophisticated web interface for hackathon judges 
 
 **Usage:**
 
-1. Navigate to `/dashboard/` in your browser
-2. Select a data type from the sidebar
-3. Toggle between Mock Data and Database sources
-4. View data in table or JSON format
-5. Click "View Details" for complex nested objects
+1.  Navigate to `/dashboard/` in your browser.
+2.  Start at the home page to view the interactive summary charts.
+3.  Select a specific data type from the sidebar for a detailed table view.
+4.  Use the search bar and filter options to quickly find specific data.
+5.  Toggle between Mock Data and Database sources.
+6.  Click "View Details" for complex nested objects.
 
-![Dashboard Screenshot](docs/dashboard.png)
+#### **Dashboard Screenshots**
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/dashboard_1.png" width="250"><br><sub><b>Home Page with Charts</b></sub></td>
+    <td align="center"><img src="docs/dashboard_2.png" width="250"><br><sub><b>Accounts</b></sub></td>
+    <td align="center"><img src="docs/dashboard_3.png" width="250"><br><sub><b>Transaction Details </b></sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/dashboard_4.png" width="250"><br><sub><b>Branch Locator</b></sub></td>
+    <td align="center"><img src="docs/dashboard_5.png" width="250"><br><sub><b>ATMs</b></sub></td>
+    <td align="center"><img src="docs/dashboard_6.png" width="250"><br><sub><b>Complaints Status</b></sub></td>
+  </tr>
+    <tr>
+    <td align="center"><img src="docs/dashboard_7.png" width="250"><br><sub><b>Dispute Status</b></sub></td>
+    <td align="center"><img src="docs/dashboard_8.png" width="250"><br><sub><b>Loans</b></sub></td>
+    <td align="center"><img src="docs/dashboard_9.png" width="250"><br><sub><b>FD Rates</b></sub></td>
+  </tr>
+   <tr>
+    <td align="center" colspan="3"><img src="docs/dashboard_10.png" width="250"><br><sub><b>Agents</b></sub></td>
+  </tr>
+</table>
 
 ## 🔒 Security Considerations
 

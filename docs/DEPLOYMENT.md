@@ -220,7 +220,6 @@ curl -X POST "http://localhost:8000/api/account/balance" -H "Content-Type: appli
 For issues and questions:
 
 - **Email**: codexmohan@gmail.com
-- **Project Repository**: [GitHub Repository Link]
 - **Render Support**: [Render.com Support](https://render.com/support)
 - **Neon Support**: [Neon.tech Support](https://neon.tech/support)
 

@@ -1247,3 +1247,697 @@ DETAIL:  Key (account_number)=(889768362801) already exists.
 2025-10-19 04:22:20,516 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
 2025-10-19 04:22:20,516 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
 2025-10-19 04:22:20,516 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:23:27,644 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=home
+2025-10-19 04:23:27,645 - routes.dashboard - WARNING - Mock data file not found: mock_data/home.json
+2025-10-19 04:23:27,645 - routes.dashboard - WARNING - No data found for home from mock
+2025-10-19 04:23:27,645 - routes.dashboard - INFO - Returning 0 records for home
+2025-10-19 04:23:27,645 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:23:27,645 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:23:27,645 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:23:27,649 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:23:27,650 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:23:27,650 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:23:27,653 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:23:27,653 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:23:27,653 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:23:27,664 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:23:27,664 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:23:27,664 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:23:27,676 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:23:27,676 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:23:27,676 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:23:27,679 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:23:27,679 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:23:27,679 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:23:28,755 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:23:28,755 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:23:28,755 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:23:28,757 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:23:28,757 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:23:28,757 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:26:47,456 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 04:26:47,456 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:26:47,456 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:26:47,611 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:26:47,611 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:26:47,611 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:26:47,614 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:26:47,614 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:26:47,614 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:26:47,627 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:26:47,628 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:26:47,628 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:26:47,669 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:26:47,669 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:26:47,669 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:26:47,673 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:26:47,673 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:26:47,673 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:26:47,687 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:26:47,687 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:26:47,687 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:26:47,700 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:26:47,700 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:26:47,700 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:26:49,609 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:26:49,609 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:26:49,609 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:26:49,611 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:26:49,611 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:26:49,611 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:28:22,532 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=home
+2025-10-19 04:28:22,532 - routes.dashboard - WARNING - Mock data file not found: mock_data/home.json
+2025-10-19 04:28:22,532 - routes.dashboard - WARNING - No data found for home from mock
+2025-10-19 04:28:22,532 - routes.dashboard - INFO - Returning 0 records for home
+2025-10-19 04:28:22,532 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:28:22,532 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:28:22,533 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:28:22,541 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:28:22,541 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:28:22,541 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:28:22,544 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:28:22,544 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:28:22,545 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:28:22,548 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:28:22,548 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:28:22,548 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:28:22,551 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:28:22,551 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:28:22,551 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:28:22,554 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:28:22,554 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:28:22,554 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:28:34,080 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:28:34,080 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:28:34,080 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:28:34,082 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:28:34,082 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:28:34,082 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:28:34,574 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:28:34,574 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:28:34,574 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:28:34,576 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:28:34,576 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:28:34,576 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:28:34,933 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:28:34,933 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:28:34,933 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 04:28:34,934 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:28:34,935 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:28:34,935 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 04:28:35,291 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 04:28:35,292 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 04:28:35,292 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 04:28:35,294 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 04:28:35,294 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 04:28:35,294 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 04:28:35,978 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:28:35,978 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:28:35,979 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 04:28:35,980 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:28:35,980 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:28:35,980 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 04:28:45,049 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=home
+2025-10-19 04:28:45,050 - routes.dashboard - WARNING - Mock data file not found: mock_data/home.json
+2025-10-19 04:28:45,050 - routes.dashboard - WARNING - No data found for home from mock
+2025-10-19 04:28:45,050 - routes.dashboard - INFO - Returning 0 records for home
+2025-10-19 04:28:45,050 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:28:45,050 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:28:45,050 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:28:45,062 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:28:45,062 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:28:45,062 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:28:45,064 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:28:45,064 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:28:45,064 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:28:45,067 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:28:45,068 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:28:45,068 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:28:45,071 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:28:45,071 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:28:45,071 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:28:45,083 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:28:45,084 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:28:45,084 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:28:59,823 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 04:28:59,823 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 04:28:59,823 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 04:28:59,824 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 04:28:59,824 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 04:28:59,824 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 04:47:07,537 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=home
+2025-10-19 04:47:07,537 - routes.dashboard - WARNING - Mock data file not found: mock_data/home.json
+2025-10-19 04:47:07,537 - routes.dashboard - WARNING - No data found for home from mock
+2025-10-19 04:47:07,537 - routes.dashboard - INFO - Returning 0 records for home
+2025-10-19 04:47:07,538 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:47:07,538 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:47:07,538 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:47:07,550 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:47:07,550 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:47:07,550 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:47:07,554 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:47:07,554 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:47:07,554 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:47:07,558 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:47:07,558 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:47:07,558 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:47:07,562 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:47:07,562 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:47:07,562 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:47:07,565 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:47:07,565 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:47:07,565 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:48:00,819 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 04:48:00,819 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 04:48:00,819 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 04:48:00,820 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 04:48:00,820 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 04:48:00,820 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 04:48:03,446 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:48:03,446 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:48:03,446 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:48:03,448 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:48:03,448 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:48:03,448 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:48:04,243 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 04:48:04,243 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 04:48:04,243 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 04:48:04,244 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 04:48:04,245 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 04:48:04,245 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 04:48:05,060 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:48:05,061 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:48:05,061 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:48:05,063 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:48:05,063 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:48:05,063 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:48:05,724 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 04:48:05,724 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 04:48:05,724 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 04:48:05,726 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 04:48:05,726 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 04:48:05,726 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 04:48:06,395 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:48:06,395 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:48:06,395 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:48:06,397 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:48:06,397 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:48:06,397 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:48:06,893 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:48:06,893 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:48:06,893 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:48:06,895 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:48:06,895 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:48:06,895 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:51:59,236 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 04:51:59,236 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:51:59,236 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:51:59,363 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:51:59,363 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:51:59,363 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:51:59,383 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:51:59,383 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:51:59,383 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:51:59,387 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:51:59,387 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:51:59,387 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:51:59,392 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:51:59,392 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:51:59,392 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:51:59,394 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:51:59,395 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:51:59,395 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:51:59,398 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:51:59,398 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:51:59,398 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:52:00,587 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:52:00,588 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:52:00,588 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:52:05,985 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:52:05,985 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:52:05,985 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:52:07,053 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:52:07,054 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:52:07,054 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:52:32,650 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:52:32,650 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:52:32,650 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:52:33,479 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:52:33,480 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:52:33,480 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 04:52:35,820 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:52:35,821 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:52:35,821 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:52:37,198 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:52:37,198 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:52:37,198 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 04:52:37,977 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 04:52:37,977 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 04:52:37,977 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 04:52:41,245 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 04:52:41,245 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 04:52:41,245 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 04:52:55,005 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:52:55,005 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:52:55,005 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:52:56,779 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 04:52:56,779 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 04:52:56,780 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 04:52:57,775 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 04:52:57,775 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 04:52:57,775 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 04:52:58,654 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:52:58,654 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:52:58,654 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:52:59,308 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:52:59,308 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:52:59,308 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:59:28,440 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 04:59:28,440 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:59:28,440 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:59:28,538 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:59:28,539 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:59:28,539 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:59:28,552 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:59:28,553 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:59:28,553 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:59:28,557 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 04:59:28,557 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 04:59:28,557 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 04:59:28,561 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 04:59:28,561 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 04:59:28,562 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 04:59:28,588 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 04:59:28,588 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 04:59:28,588 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 04:59:28,593 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 04:59:28,593 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 04:59:28,593 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 04:59:29,784 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 04:59:29,785 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 04:59:29,785 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 04:59:30,680 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 04:59:30,680 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 04:59:30,680 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 04:59:48,648 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 04:59:48,649 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 04:59:48,649 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 05:00:09,944 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:00:09,944 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:00:09,944 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:01:33,814 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:01:33,814 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:01:33,814 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:01:34,208 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:01:34,208 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:01:34,208 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:01:34,817 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 05:01:34,818 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 05:01:34,818 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 05:01:35,215 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:01:35,216 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:01:35,216 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:01:36,010 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:01:36,010 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:01:36,010 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:01:43,177 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:01:43,178 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:01:43,178 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:01:44,440 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:01:44,441 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:01:44,441 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:01:45,007 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:01:45,008 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:01:45,008 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:01:45,956 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:01:45,956 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:01:45,956 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:01:46,357 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:01:46,358 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:01:46,358 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:02:09,937 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:02:09,937 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:02:09,937 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:02:11,834 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:02:11,834 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:02:11,834 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:04:47,515 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:04:47,515 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:04:47,515 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:04:47,523 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:04:47,524 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:04:47,524 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:04:47,528 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:04:47,528 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:04:47,528 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:04:47,532 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:04:47,532 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:04:47,532 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:04:47,546 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:04:47,546 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:04:47,546 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:04:47,559 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:04:47,560 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:04:47,560 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:05:04,556 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:05:04,556 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:05:04,556 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:05:23,577 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:05:23,578 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:05:23,578 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:05:34,628 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 05:05:34,629 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 05:05:34,629 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 05:05:51,208 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:05:51,209 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:05:51,209 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:08:53,838 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 05:08:53,838 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:08:53,838 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:08:54,095 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:08:54,095 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:08:54,095 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:08:54,105 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:08:54,106 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:08:54,106 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:08:54,118 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:08:54,118 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:08:54,118 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:08:54,130 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:08:54,131 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:08:54,131 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:08:54,143 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:08:54,143 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:08:54,143 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:08:54,156 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:08:54,156 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:08:54,156 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:08:55,657 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:08:55,657 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:08:55,657 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:08:56,059 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:08:56,059 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:08:56,059 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:08:56,538 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 05:08:56,538 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 05:08:56,538 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 05:08:57,174 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:08:57,174 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:08:57,174 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:08:58,582 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:08:58,582 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:08:58,582 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:08:59,403 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:08:59,403 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:08:59,403 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:09:00,966 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:09:00,966 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:09:00,966 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:09:02,115 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:09:02,115 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:09:02,115 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:09:02,470 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:09:02,470 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:09:02,470 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:09:02,960 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:09:02,960 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:09:02,960 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:09:03,739 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:09:03,739 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:09:03,739 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:09:04,560 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:09:04,560 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:09:04,560 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:09:05,339 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:09:05,339 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:09:05,339 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:09:05,868 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:09:05,868 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:09:05,868 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:09:49,573 - services.sms_service - INFO - Twilio usage disabled by configuration. Using mock SMS service.
+2025-10-19 05:09:49,582 - services.agent_service - INFO - Loaded 25 agents from mock_data/agents.json
+2025-10-19 05:09:49,635 - __main__ - INFO - Starting BankWise AI Banking Support API
+2025-10-19 05:09:52,032 - database - INFO - BankWise AI Banking Support API - Database tables already exist
+2025-10-19 05:09:54,489 - database - INFO - All tables contain data. Skipping population.
+2025-10-19 05:09:54,581 - __main__ - INFO - Database initialized successfully
+2025-10-19 05:09:57,992 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 05:09:57,992 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:09:57,992 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:09:58,051 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:09:58,051 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:09:58,052 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:09:58,061 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:09:58,062 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:09:58,062 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:09:58,068 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:09:58,068 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:09:58,068 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:09:58,095 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:09:58,095 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:09:58,095 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:09:58,099 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:09:58,099 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:09:58,099 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:09:58,107 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:09:58,107 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:09:58,107 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:09:59,647 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:09:59,647 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:09:59,647 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:10:01,359 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:10:01,359 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:10:01,359 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:10:02,458 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:10:02,458 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:10:02,458 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:10:02,712 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:10:02,712 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:10:02,712 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:10:03,060 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:10:03,060 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:10:03,060 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:10:03,650 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:10:03,650 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:10:03,650 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:10:04,012 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:10:04,012 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:10:04,012 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:10:04,559 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:10:04,559 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:10:04,559 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:10:05,001 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:10:05,002 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:10:05,002 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:10:05,931 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:10:05,931 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:10:05,931 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:10:06,887 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:10:06,888 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:10:06,888 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:10:07,564 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:10:07,564 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:10:07,564 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:10:08,176 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:10:08,177 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:10:08,177 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:10:08,758 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:10:08,759 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:10:08,759 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:10:09,144 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:10:09,145 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:10:09,145 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:10:32,726 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 05:10:32,726 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:10:32,726 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:10:32,801 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:10:32,801 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:10:32,801 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:10:32,813 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:10:32,813 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:10:32,813 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:10:32,817 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:10:32,817 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:10:32,817 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:10:32,845 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:10:32,846 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:10:32,846 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:10:32,850 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:10:32,851 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:10:32,851 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:10:32,854 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:10:32,854 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:10:32,854 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:10:34,523 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:10:34,523 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:10:34,523 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:10:35,218 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:10:35,218 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:10:35,218 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:10:44,677 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:10:44,678 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:10:44,678 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:10:45,313 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:10:45,313 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:10:45,313 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:10:45,807 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:10:45,807 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:10:45,807 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:10:46,389 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:10:46,389 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:10:46,389 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:10:47,078 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:10:47,079 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:10:47,079 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:12:03,571 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 05:12:03,571 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:12:03,571 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:12:03,647 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:12:03,648 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:12:03,648 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:12:03,678 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:12:03,678 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:12:03,678 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:12:03,687 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:12:03,687 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:12:03,687 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:12:03,691 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:12:03,691 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:12:03,691 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:12:03,694 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:12:03,694 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:12:03,694 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:12:03,697 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:12:03,697 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:12:03,697 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:12:04,727 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:12:04,727 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:12:04,727 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:12:07,278 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:12:07,278 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:12:07,278 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:12:07,836 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:12:07,836 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:12:07,836 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:12:08,245 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:12:08,245 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:12:08,245 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:12:08,750 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:12:08,750 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:12:08,750 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:12:09,549 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:12:09,549 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:12:09,549 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:12:10,611 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:12:10,612 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:12:10,612 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:12:11,037 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:12:11,037 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:12:11,037 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:12:11,884 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:12:11,884 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:12:11,884 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:12:12,810 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:12:12,810 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:12:12,810 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:13:47,901 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:13:47,901 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:13:47,901 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:18:19,563 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:18:19,564 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:18:19,564 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:18:19,906 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:18:19,906 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:18:19,906 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:18:20,308 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:18:20,308 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:18:20,308 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:18:21,480 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:18:21,481 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:18:21,481 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:23:27,425 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=branches
+2025-10-19 05:23:27,425 - routes.dashboard - INFO - Loaded 30 branches records from mock data
+2025-10-19 05:23:27,425 - routes.dashboard - INFO - Returning 30 records for branches
+2025-10-19 05:23:30,164 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=atms
+2025-10-19 05:23:30,165 - routes.dashboard - INFO - Loaded 100 atms records from mock data
+2025-10-19 05:23:30,165 - routes.dashboard - INFO - Returning 100 records for atms
+2025-10-19 05:24:15,374 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:24:15,374 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:24:15,374 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:24:27,839 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=disputes
+2025-10-19 05:24:27,840 - routes.dashboard - INFO - Loaded 30 disputes records from mock data
+2025-10-19 05:24:27,840 - routes.dashboard - INFO - Returning 30 records for disputes
+2025-10-19 05:24:42,228 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:24:42,228 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:24:42,228 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:25:07,823 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=fd_rates
+2025-10-19 05:25:07,823 - routes.dashboard - INFO - Loaded 26 fd_rates records from mock data
+2025-10-19 05:25:07,823 - routes.dashboard - INFO - Returning 26 records for fd_rates
+2025-10-19 05:25:16,681 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:25:16,681 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:25:16,681 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:25:29,305 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cheques
+2025-10-19 05:25:29,305 - routes.dashboard - INFO - Loaded 37 cheques records from mock data
+2025-10-19 05:25:29,305 - routes.dashboard - INFO - Returning 37 records for cheques
+2025-10-19 05:26:07,414 - routes.dashboard - INFO - Dashboard request: source=mock, data_type=accounts
+2025-10-19 05:26:07,415 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:26:07,415 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:26:07,514 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:26:07,514 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:26:07,514 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:26:07,540 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:26:07,540 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:26:07,540 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:26:07,548 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:26:07,548 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:26:07,548 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:26:07,552 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:26:07,552 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:26:07,552 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:26:07,555 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:26:07,555 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:26:07,555 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:26:07,564 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:26:07,564 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:26:07,564 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:26:09,328 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:26:09,328 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:26:09,328 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:26:25,869 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:26:25,870 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:26:25,870 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:26:25,885 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:26:25,885 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:26:25,885 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:26:25,891 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:26:25,892 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:26:25,892 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:26:25,897 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:26:25,898 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:26:25,898 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:26:25,911 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:26:25,911 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:26:25,911 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:26:25,916 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:26:25,916 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:26:25,916 - routes.dashboard - INFO - Returning 50 records for complaints
+2025-10-19 05:26:29,331 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:26:29,332 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:26:29,332 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:30:03,869 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=accounts
+2025-10-19 05:30:03,869 - routes.dashboard - INFO - Loaded 20 accounts records from mock data
+2025-10-19 05:30:03,869 - routes.dashboard - INFO - Returning 20 records for accounts
+2025-10-19 05:30:03,874 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=transactions
+2025-10-19 05:30:03,874 - routes.dashboard - INFO - Loaded 39 transactions records from mock data
+2025-10-19 05:30:03,874 - routes.dashboard - INFO - Returning 39 records for transactions
+2025-10-19 05:30:03,877 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=agents
+2025-10-19 05:30:03,877 - routes.dashboard - INFO - Loaded 25 agents records from mock data
+2025-10-19 05:30:03,877 - routes.dashboard - INFO - Returning 25 records for agents
+2025-10-19 05:30:03,884 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=cards
+2025-10-19 05:30:03,884 - routes.dashboard - INFO - Loaded 39 cards records from mock data
+2025-10-19 05:30:03,884 - routes.dashboard - INFO - Returning 39 records for cards
+2025-10-19 05:30:03,898 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=loans
+2025-10-19 05:30:03,899 - routes.dashboard - INFO - Loaded 40 loans records from mock data
+2025-10-19 05:30:03,899 - routes.dashboard - INFO - Returning 40 records for loans
+2025-10-19 05:30:03,902 - routes.dashboard - INFO - Dashboard API request: source=mock, data_type=complaints
+2025-10-19 05:30:03,902 - routes.dashboard - INFO - Loaded 50 complaints records from mock data
+2025-10-19 05:30:03,902 - routes.dashboard - INFO - Returning 50 records for complaints
